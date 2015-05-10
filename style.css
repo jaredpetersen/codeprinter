@@ -1,0 +1,54 @@
+body
+{
+    background-color: #EEEEEE;
+}
+
+.document
+{
+    padding: 0;
+    margin: 0;
+    padding: 0.25in 0.25in;
+    overflow: hidden;
+    width: 8.5in;
+    margin: 0 auto;
+}
+
+textarea
+{
+    width: 100%;
+    height: 100%;
+    border-color: transparent;
+    outline: none;
+    resize: none;
+    font-family: Menlo, "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", Monaco, monospace;
+}
+
+.printSpace
+{
+    display: none;
+}
+
+
+@media print
+{
+    .printSpace
+    {
+        display: block;
+        overflow: visible;
+        font-family: Menlo, "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", Monaco, monospace;
+        white-space: pre;
+        white-space: pre-wrap;
+        page-break-after: always;
+    }
+
+    textarea
+    {
+        display: none;
+    }
+}
+
+@page
+        {
+            size: auto;   /* auto is the current printer page size */
+            margin: 0mm;  /* this affects the margin in the printer settings */
+        }
