@@ -9,7 +9,7 @@ body
     margin: 0;
     padding: 0.25in 0.25in;
     overflow: hidden;
-    width: 8.5in;
+    width: 7.25in;
     margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@ textarea
     border-color: transparent;
     outline: none;
     resize: none;
-    font-family: Menlo, "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", Monaco, monospace;
+    font-family: monospace;
 }
 
 .printSpace
@@ -35,7 +35,7 @@ textarea
     {
         display: block;
         overflow: visible;
-        font-family: Menlo, "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", Monaco, monospace;
+        font-family: monospace;
         white-space: pre;
         white-space: pre-wrap;
         page-break-after: always;

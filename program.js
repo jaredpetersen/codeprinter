@@ -2,32 +2,42 @@ function keyPressed(event)
 {
     var textSpace = document.getElementById('typeSpace');
     var printSpace = document.getElementById('printSpace');
-    printSpace.innerHTML = "";
-    var regEx = /\r\n|\n\r|\n|\r/g;
-    var textArray = textSpace.value.replace(regEx,"\n").split("\n");
-    var lineCount = 0;
-    var lineBlock = 53;
 
+    // Reset the print space
+    printSpace.innerHTML = "";
+
+    // Get the code
+    var text = textSpace.value;
+
+    // Get the number of characters minus the newlines
+    // The newlines will set our character width calculations off
+    var characterNoNew = text.replace(/\r?\n|\r/,"").length;
+    var characterNew = text.match(/\n/g).length;
+    var characterTotal = characterNoNew + (characterNew * 104);
+
+    // Max number of characters allowed per line is 104
+    // Split the code into lines
+    var textArray = text.match(/[^\r\n]+/g);
     console.log(textArray);
 
     for (i = 0; i <= textArray.length; i++)
     {
-        var printSpace = document.getElementById("printSpace");
+        // Output one line of code
+        printSpace.innerHTML = printSpace.innerHTML + textArray[i] + "\n";
 
-        if (lineCount >= lineBlock)
+        // Number of lines per page is 53
+        if (i % 53 == 0 && i != 0)
         {
-            lineCount = 0;
-            lineBlock = lineBlock;
-            printSpace.innerHTML = printSpace.innerHTML + '\n\n\n\n\n\n';
+            // New page
+            printSpace.innerHTML = printSpace.innerHTML + "\n\n\n\n";
         }
-
-        printSpace.innerHTML = printSpace.innerHTML + '\n' + textArray[i];
-
-        lineCount = lineCount + 1;
     }
 
-    //printSpace.innerHTML = textSpace.value;
-    //console.log(textSpace.value);
+    console.log(characterTotal);
+
+    // Put the data in the print space for printing
+    //printSpace.innerHTML = text;
+
 }
 
 function countLines()
