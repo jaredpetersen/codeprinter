@@ -9,39 +9,106 @@ function keyPressed(event)
     // Get the code
     var text = textSpace.value;
 
-    // Get the number of characters minus the newlines
-    // The newlines will set our character width calculations off
-    var characterNoNew = text.replace(/\r?\n|\r/,"").length;
-    var characterNew = text.match(/\n/g).length;
-    var characterTotal = characterNoNew + (characterNew * 104);
-
     // Max number of characters allowed per line is 104
-    // Split the code into lines
-    var textArray = text.match(/[^\r\n]+/g);
-    console.log(textArray);
 
-    for (i = 0; i <= textArray.length; i++)
+    var textArray = text.split(" ");
+    console.log(textArray);
+    var newLine = "";
+    var lineCount = 0;
+
+    // Output lines of code in the printSpace
+    for (i = 0; i < textArray.length; i++)
     {
-        // Output one line of code
-        printSpace.innerHTML = printSpace.innerHTML + textArray[i] + "\n";
+        newLine = newLine + " " + textArray[i];
+        //console.log(newLine.length + ": " + newLine);
+
+        if (newLine.length > 104)
+        {
+            // Line is too long, backtrack
+            newLine = newLine.substring(0, newLine.length - textArray[i].length);
+            console.log(newLine.length + ": " + newLine);
+
+            // Print the line
+            printLine(newLine);
+            lineCount++;
+
+            // Put the item into the next line
+            newLine = "";
+            newLine = newLine + textArray[i];
+            console.log(newLine.length + ": " + newLine);
+        }
+
+        else if (newLine.length == 104)
+        {
+            // Print the line
+            printLine(newLine);
+            lineCount++;
+        }
+
+
 
         // Number of lines per page is 53
-        if (i % 53 == 0 && i != 0)
+        if (lineCount % 53 == 0 && lineCount != 0)
         {
             // New page
             printSpace.innerHTML = printSpace.innerHTML + "\n\n\n\n";
         }
     }
 
-    console.log(characterTotal);
-
-    // Put the data in the print space for printing
-    //printSpace.innerHTML = text;
+    // Print the line
+    printLine(newLine);
 
 }
 
-function countLines()
+function printLine(text)
 {
-    var textSpace = document.getElementById('typeSpace');
-    return textSpace.value.split(/\r\n|\n\r|\n|\r/g).length;
+    var printSpace = document.getElementById('printSpace');
+    printSpace.innerHTML = printSpace.innerHTML + text + "\n";
+}
+
+function printMultiLine(text)
+{
+    if (text.length > 104)
+    {
+        var wordArray = text.split(/" "|\r\n|\n\r|\n|\r/g);
+        console.log(wordArray);
+        var newLine = "";
+
+        for (i = 0; i < wordArray.length; i++)
+        {
+            newLine = newLine + " " + wordArray[i];
+            console.log(newLine.length + ": " + newLine);
+
+            if (newLine.length > 104)
+            {
+                // Line is too long, backtrack
+                newLine = newLine.substring(0, newLine.length - wordArray[i].length);
+                console.log(newLine.length + ": " + newLine);
+
+                // Print the line
+                printLine(newLine);
+
+                // Put the item into the next line
+                newLine = "";
+                newLine = newLine + wordArray[i];
+                console.log(newLine.length + ": " + newLine);
+            }
+
+            else if (newLine.length == 104)
+            {
+                // Print the line
+                printLine(newLine);
+            }
+
+        }
+
+        // Print the line
+        printLine(newLine);
+
+    }
+    else
+    {
+        // Print a single line
+        printLine(text);
+    }
 }
