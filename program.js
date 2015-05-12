@@ -9,49 +9,109 @@ function keyPressed(event)
     // Get the code
     var text = textSpace.value;
 
-    // Max number of characters allowed per line is 104
-
-    var textArray = text.split(" ");
+    // Seperate the input text into words
+    var textArray = text.match(/([^\s]+\n*|\n+)/g);
     console.log(textArray);
+
+    // Set up the line, line counter, and top margin
+    printLine("\n");
     var newLine = "";
-    var lineCount = 0;
+    var lineCount = 1;
 
     // Output lines of code in the printSpace
     for (i = 0; i < textArray.length; i++)
     {
-        newLine = newLine + " " + textArray[i];
-        //console.log(newLine.length + ": " + newLine);
-
-        if (newLine.length > 104)
+        console.log(textArray[i]);
+        // Get the next word for the line
+        if (newLine == "")
         {
+            newLine = newLine + textArray[i];
+        }
+        else
+        {
+            newLine = newLine + " " + textArray[i];
+        }
+
+        var singleMatch = newLine.match(/\r|\n/);
+        var doubleMatch = newLine.match(/\r\r|\n\n/);
+
+        if (newLine.length == 80 || singleMatch)
+        {
+            // Print the line
+            if (singleMatch)
+            {
+                // Already has a newline character
+                printLine(newLine);
+            }
+            else
+            {
+                // Does not have a newline, add one
+                printLine(newLine + "\n");
+            }
+
+            console.log(lineCount + " : " + newLine + " : " + newLine.length);
+
+            //console.log((newLine.match(/\n*$/) || []).length + " ---- " + newLine.match(/\n*$/));
+
+
+            var matchy = newLine.match(/\n*$/);
+            // Reset the line
+            if (matchy)
+            {
+                //console.log(matchy);
+                //console.log((newLine.match(/\n/g) || []).length);
+                lineCount = lineCount + (newLine.match(/\n/g) || []).length;
+            }
+            else
+            {
+                lineCount++;
+            }
+            newLine = "";
+        }
+        else if (newLine.length > 80)
+        {
+            console.log("before: " + lineCount + " : " + newLine + " : " + newLine.length);
             // Line is too long, backtrack
             newLine = newLine.substring(0, newLine.length - textArray[i].length);
-            console.log(newLine.length + ": " + newLine);
 
             // Print the line
             printLine(newLine);
-            lineCount++;
 
-            // Put the item into the next line
+            console.log("after: " + lineCount + " : " + newLine + " : " + newLine.length);
+
+            // Reset the line
             newLine = "";
+
+            // Put the overflow item into the next line
             newLine = newLine + textArray[i];
-            console.log(newLine.length + ": " + newLine);
-        }
-
-        else if (newLine.length == 104)
-        {
-            // Print the line
-            printLine(newLine);
             lineCount++;
+
+
+            // TODO Need to find a way to deal with items that are longer
+            // than the width but can't be broken up in a clear way.
+
+            /*if (newLine.length > 80)
+            {
+                console.log(newLine.length);
+                // Line is longer than the allotted line length
+                while (newLine.length > 80)
+                {
+                    console.log(newLine.substring(0, 80));
+                    printLine(newLine.substring(0, 80))
+                    newLine = newLine.replace(newLine.substring(0, 80), "");
+                    lineCount++;
+                }
+
+            }*/
         }
-
-
 
         // Number of lines per page is 53
-        if (lineCount % 53 == 0 && lineCount != 0)
+        if (lineCount % 63 == 0 && lineCount != 1)
         {
             // New page
-            printSpace.innerHTML = printSpace.innerHTML + "\n\n\n\n";
+            //console.log(printSpace.innerHTML + "\n");
+            printSpace.innerHTML = printSpace.innerHTML + "\n\n\n\n\n";
+            lineCount = 1;
         }
     }
 
@@ -63,52 +123,5 @@ function keyPressed(event)
 function printLine(text)
 {
     var printSpace = document.getElementById('printSpace');
-    printSpace.innerHTML = printSpace.innerHTML + text + "\n";
-}
-
-function printMultiLine(text)
-{
-    if (text.length > 104)
-    {
-        var wordArray = text.split(/" "|\r\n|\n\r|\n|\r/g);
-        console.log(wordArray);
-        var newLine = "";
-
-        for (i = 0; i < wordArray.length; i++)
-        {
-            newLine = newLine + " " + wordArray[i];
-            console.log(newLine.length + ": " + newLine);
-
-            if (newLine.length > 104)
-            {
-                // Line is too long, backtrack
-                newLine = newLine.substring(0, newLine.length - wordArray[i].length);
-                console.log(newLine.length + ": " + newLine);
-
-                // Print the line
-                printLine(newLine);
-
-                // Put the item into the next line
-                newLine = "";
-                newLine = newLine + wordArray[i];
-                console.log(newLine.length + ": " + newLine);
-            }
-
-            else if (newLine.length == 104)
-            {
-                // Print the line
-                printLine(newLine);
-            }
-
-        }
-
-        // Print the line
-        printLine(newLine);
-
-    }
-    else
-    {
-        // Print a single line
-        printLine(text);
-    }
+    printSpace.innerHTML = printSpace.innerHTML + text;
 }

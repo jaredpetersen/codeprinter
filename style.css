@@ -7,7 +7,7 @@ body
 {
     padding: 0;
     margin: 0;
-    padding: 0.25in 0.25in;
+    padding: 0in 0.25in;
     overflow: hidden;
     width: 7.25in;
     margin: 0 auto;
@@ -48,7 +48,7 @@ textarea
 }
 
 @page
-        {
-            size: auto;   /* auto is the current printer page size */
-            margin: 0mm;  /* this affects the margin in the printer settings */
-        }
+{
+    size: auto;   /* auto is the current printer page size */
+    margin: 0mm;  /* this affects the margin in the printer settings */
+}
