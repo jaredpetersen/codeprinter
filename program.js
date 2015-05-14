@@ -1,4 +1,22 @@
+// Global variables
+var lineCount = 0;
+var pageLength = 63;
+var lineLength = 80;
+
+/**
+ * Prints whatever text is given to it
+ * @param {Event} event The keydown event from inputting data into the text box
+ */
 function keyPressed(event)
+{
+    // Take the input text box code and set it up for printing out.
+    printInput();
+}
+
+/**
+ * Takes the data in the text box and formats it for printing on the page
+ */
+function printInput()
 {
     var textSpace = document.getElementById('typeSpace');
     var printSpace = document.getElementById('printSpace');
@@ -11,17 +29,15 @@ function keyPressed(event)
 
     // Seperate the input text into words
     var textArray = text.match(/([^\s]+\n*|\n+)/g);
-    console.log(textArray);
 
     // Set up the line, line counter, and top margin
-    printLine("\n");
+    printLine("111111111\n");
     var newLine = "";
-    var lineCount = 1;
+    lineCount = 1;
 
     // Output lines of code in the printSpace
     for (i = 0; i < textArray.length; i++)
     {
-        console.log(textArray[i]);
         // Get the next word for the line
         if (newLine == "")
         {
@@ -32,96 +48,132 @@ function keyPressed(event)
             newLine = newLine + " " + textArray[i];
         }
 
+        // Regular expression used to find single newline characters
         var singleMatch = newLine.match(/\r|\n/);
-        var doubleMatch = newLine.match(/\r\r|\n\n/);
 
-        if (newLine.length == 80 || singleMatch)
+        console.log("Linecount= " + lineCount + " ;; Line= " + newLine + " ;; length= " + newLine.length);
+
+        // Line length is the right size or has a newline at the end
+        if (newLine.length == lineLength || ((newLine.length <= lineLength) && (singleMatch != null)))
         {
-            // Print the line
-            if (singleMatch)
-            {
-                // Already has a newline character
-                printLine(newLine);
-            }
-            else
+            console.log("cowabunga " + newLine.length);
+            console.log(singleMatch);
+            // Check if the new line has a newline character
+            if (!singleMatch)
             {
                 // Does not have a newline, add one
-                printLine(newLine + "\n");
+                newLine = newLine + "\n";
             }
 
-            console.log(lineCount + " : " + newLine + " : " + newLine.length);
+            // Print the new line
+            printLine(newLine);
 
-            //console.log((newLine.match(/\n*$/) || []).length + " ---- " + newLine.match(/\n*$/));
+            var multipleMatch = newLine.match(/\n*$/);
 
-
-            var matchy = newLine.match(/\n*$/);
-            // Reset the line
-            if (matchy)
+            // Reset the line counter
+            if (multipleMatch)
             {
-                //console.log(matchy);
-                //console.log((newLine.match(/\n/g) || []).length);
+                // Have to take the newlines into account for the lineCount
                 lineCount = lineCount + (newLine.match(/\n/g) || []).length;
             }
             else
             {
+                // Nothing fancy, just add a single line
                 lineCount++;
             }
+
+            // Reset the line variable
             newLine = "";
         }
-        else if (newLine.length > 80)
+        // Line length is larger
+        else if (newLine.length > lineLength)
         {
-            console.log("before: " + lineCount + " : " + newLine + " : " + newLine.length);
-            // Line is too long, backtrack
+            // Line is too long, backtrack one word
+            console.log("Bit too big " + newLine + "; Lenght: " + newLine.length);
             newLine = newLine.substring(0, newLine.length - textArray[i].length);
+            console.log("------LINE TOO BIG FIRST= " + newLine + " ;; Length=" + newLine.length);
+            // Make sure the line isn't too big still (cases where the word is
+            // longer than the actual line length)
+            if (newLine.length > lineLength)
+            {
+                lineTooBig(newLine);
+            }
+            else
+            {
+                // Good to go, just added too many words
+                printLine(newLine + "\n");
 
-            // Print the line
-            printLine(newLine);
+            }
 
-            console.log("after: " + lineCount + " : " + newLine + " : " + newLine.length);
-
-            // Reset the line
-            newLine = "";
-
-            // Put the overflow item into the next line
-            newLine = newLine + textArray[i];
+            // Increment the line counter
             lineCount++;
 
-
-            // TODO Need to find a way to deal with items that are longer
-            // than the width but can't be broken up in a clear way.
-
-            /*if (newLine.length > 80)
-            {
-                console.log(newLine.length);
-                // Line is longer than the allotted line length
-                while (newLine.length > 80)
-                {
-                    console.log(newLine.substring(0, 80));
-                    printLine(newLine.substring(0, 80))
-                    newLine = newLine.replace(newLine.substring(0, 80), "");
-                    lineCount++;
-                }
-
-            }*/
+            // Put the overflow into the next line
+            // Don't worry about printing it, that will be handeled on the next
+            // pass through
+            newLine = textArray[i];
+            console.log("juju: " + textArray[i])
         }
 
-        // Number of lines per page is 53
-        if (lineCount % 63 == 0 && lineCount != 1)
+        // New page
+        console.log("special: " + printSpace.innerHTML.substring(printSpace.innerHTML.length - 2, printSpace.innerHTML.length))
+
+        if (lineCount == pageLength ||
+            (lineCount > pageLength) &&
+                (printSpace.innerHTML
+                    .substring(printSpace.innerHTML.length - 2,
+                               printSpace.innerHTML.length)
+                    .match(/\r|\n/)))
         {
-            // New page
-            //console.log(printSpace.innerHTML + "\n");
-            printSpace.innerHTML = printSpace.innerHTML + "\n\n\n\n\n";
+            // Print the necessary newline character to space out the new
+            // page lines
+            printSpace.innerHTML = printSpace.innerHTML + "111111111\n222222222\n333333333\n444444444\n";
+            // Reset the page counter
             lineCount = 1;
+            console.log("=================================================");
+            console.log("New Page")
+            console.log("=================================================");
         }
     }
-
-    // Print the line
+    // Print the last line
     printLine(newLine);
-
 }
 
+/**
+ * Prints whatever text is given to it
+ * @param {String} text The text to be printed
+ */
 function printLine(text)
 {
     var printSpace = document.getElementById('printSpace');
+    console.log(lineCount + ": " + text + " ;; " + text.length);
     printSpace.innerHTML = printSpace.innerHTML + text;
+}
+
+/**
+ * Prints words that are too big for a single line
+ * @param {String} newLine The text to be printed
+ */
+function lineTooBig(newLine)
+{
+    if (newLine.length > 80)
+    {
+        // Only print out part of the newline
+        printLine(newLine.substring(0, 80) + "\n");
+        console.log("Linecount=" + lineCount + " ------LINE TOO BIG=" + newLine.substring(0, 80));
+        // Increment the lineCounter
+        //lineCount++;
+        // Reset the newline
+        newLine = newLine.replace(newLine.substring(0, 80), "");
+        console.log("--------TOO BIG NEWLINE=" + newLine)
+        // Re-call the method to make sure that the line doesn't need to be
+        // broken down any further
+        lineTooBig(newLine);
+    }
+    else
+    {
+        console.log("--------TOO BIG PRINTED=" + newLine)
+        // Good size, good to go
+        printLine(newLine);
+    }
 }
