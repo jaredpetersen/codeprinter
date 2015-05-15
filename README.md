@@ -6,9 +6,7 @@ print code out. They either put silly headers on it, make the text giant, or
 don't provide code highlighting. The printing user interface typically leaves
 much to be desired as well.
 
-Status
-============
-This project is very much a work in progress. As it stands currently, the
-program is very buggy and not at all useful. There's a lot of work to be done
-still. Please excuse the Javascript, I'm still trying to figure out how to
-do paging and maintain line integrity.
+Development Status
+==================
+Code Printer is in active development. At this point, the code does not perform
+code highlighting, but that feature will be coming soon.
