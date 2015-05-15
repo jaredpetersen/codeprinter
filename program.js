@@ -133,6 +133,12 @@ function printInput()
     var newLineCount = (text.match(/\r|\n/g) || []).length;
     lineCount = lineCount + newLineCount;
 
+    // Sanitize the text
+    text = text.replace(/'/g, "&#39;");
+    text = text.replace(/"/g, "&#34;");
+    text = text.replace(/</g, "&#60;");
+    text = text.replace(/>/g, "&#62;");
+
     // Variables used for tracking the line length
     var deficit = pageLength - lineCount + 1;
     var deficitCount = (printSpace.innerHTML
