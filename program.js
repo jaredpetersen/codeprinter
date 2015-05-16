@@ -2,7 +2,7 @@
 var textSpace = document.getElementById('typeSpace');
 var printSpace = document.getElementById('printSpace');
 var lineCount = 0;
-// On line 64, printing the new page newlines
+// On line 64, print the new page newlines
 var pageLength = 64;
 var lineLength = 80;
 var newLine = "";
@@ -13,8 +13,12 @@ var newLine = "";
  */
 function keyPressed(event)
 {
-    // Take the input text box code and set it up for printing out.
-    printInput();
+    // Prevent printing an empty string
+    if (textSpace.value != "")
+    {
+        // Take the input text box code and set it up for printing out.
+        printInput();
+    }
 }
 
 /**
@@ -27,10 +31,12 @@ function printInput()
     // Get the code
     var text = textSpace.value;
     // Seperate the input text into words
-    var textArray = text.match(/([^\s]+\n*|\n+)/g);
+    //var textArray = text.match(/([^\s]+\n*|\n+)/g);
+    //var textArray = text.match(/([^\s]+\n*|\s[\s]+|\n+)/g);
+    var textArray = text.match(/([^\s]+\n*)|\s[\s]+\n|(\s[\s]+)|(\n+)/g);
 
     // Set up the line, line counter, and top margin
-    printSpace.innerHTML = printSpace.innerHTML + "\n\n";
+    printSpace.innerHTML = printSpace.innerHTML + "11111\n22222\n";
     newLine = "";
     lineCount = 2;
 
@@ -48,7 +54,7 @@ function printInput()
         }
 
         // Regular expression used to find single newline characters
-        var singleMatch = newLine.match(/\r|\n/g);
+        var singleMatch = newLine.match(/\n/g);
 
         // Line length is the right size or has a newline at the end
         if (newLine.length == lineLength ||
@@ -58,7 +64,7 @@ function printInput()
             if (!singleMatch)
             {
                 // Does not have a newline, add one
-                newLine = newLine + "\n";
+                newLine = newLine + "11111\n";
             }
             // Print the new line
             printLine(newLine);
@@ -81,7 +87,7 @@ function printInput()
                 lineTooBig(newLine);
 
                 // Get the line ready for the next iteration
-                if (newLine.match(/\r|\n/g))
+                if (newLine.match(/\n/g))
                 {
                     printLine(newLine);
                     newLine = textArray[i];
@@ -95,7 +101,7 @@ function printInput()
             else
             {
                 // Good to go, just added too many words
-                if (newLine.match(/\r|\n/g) == null)
+                if (newLine.match(/\n/g) == null)
                 {
                     // Does not have a newline character, add one
                     newLine = newLine + "\n";
@@ -108,7 +114,7 @@ function printInput()
                 newLine = textArray[i];
 
                 // Take the line and make sure that that's not the end
-                if (newLine.match(/\r|\n/g))
+                if (newLine.match(/\n/g))
                 {
                     // End of that line sequence
                     // Print it and start a new one
@@ -121,83 +127,6 @@ function printInput()
 
     // Print the last line
     printLine(newLine);
-}
-
-/**
- * Prints whatever text is given to it
- * @param {String} text The text to be printed
- */
- function printLine(text)
- {
-    // Increment the line counter
-    var newLineCount = (text.match(/\r|\n/g) || []).length;
-    lineCount = lineCount + newLineCount;
-
-    // Sanitize the text
-    text = text.replace(/'/g, "&#39;");
-    text = text.replace(/"/g, "&#34;");
-    text = text.replace(/</g, "&#60;");
-    text = text.replace(/>/g, "&#62;");
-
-    // Variables used for tracking the line length
-    var deficit = pageLength - lineCount + 1;
-    var deficitCount = (printSpace.innerHTML
-        .substring(printSpace.innerHTML.length - deficit,
-                   printSpace.innerHTML.length)
-        .match(/\r|\n/g) || []).length;
-
-    // Used to track a special case in which there is a line of text at the
-    // very end with multiple newlines after it
-    // We're using this marker instead because the if statement is pretty long
-    var specialMark = false;
-
-    // Check for the previously mentioned special case
-    if (text.substring(0, text.length - deficitCount).match(/\r|\n/g) &&
-        (lineCount == pageLength) &&
-        (deficitCount == deficit))
-    {
-        // It's the special case
-        specialMark = true;
-    }
-
-    // Check if a new page should be added
-    if (lineCount == pageLength ||
-        (lineCount > pageLength &&
-            (printSpace.innerHTML
-                .substring(printSpace.innerHTML.length - 1,
-                           printSpace.innerHTML.length)
-                .match(/\r|\n/)
-            )
-        ) )
-    {
-        // A new page should be added
-
-        // If this special case, print out the text first
-        if (specialMark)
-        {
-            printSpace.innerHTML = printSpace.innerHTML + text;
-            printSpace.innerHTML = printSpace.innerHTML.substring(0, printSpace.innerHTML.length - deficit);
-        }
-
-        // Print the necessary newline character to space out the new
-        // page lines
-        printSpace.innerHTML = printSpace.innerHTML + "\n\n\n\n";
-
-        // Reset the page counter
-        lineCount = 2;
-
-        // If this is the special case, print out the necessary newlines
-        if (specialMark)
-        {
-            printSpace.innerHTML = printSpace.innerHTML + "\n";
-        }
-    }
-
-    // If it's not the special case, just print out the text
-    if (!specialMark)
-    {
-        printSpace.innerHTML = printSpace.innerHTML + text;
-    }
 }
 
 /**
@@ -223,6 +152,90 @@ function lineTooBig(text)
         // Assign the leftover text to newLine so that it can be printed
         // properly
         newLine = text;
-        //console.log("return: " + newLine);
     }
+}
+
+/**
+ * Prints whatever text is given to it
+ * @param {String} text The text to be printed
+ */
+ function printLine(text)
+ {
+    console.log(text);
+    // Increment the line counter per the number of newline characters
+    var newLineCount = (text.match(/\n/g) || []).length;
+    console.log("newlinecount: " + newLineCount);
+    lineCount = lineCount + newLineCount;
+    console.log("lineCount: " + lineCount);
+
+    // Sanitize the text
+    text = text.replace(/'/g, "&#39;");
+    text = text.replace(/"/g, "&#34;");
+    text = text.replace(/</g, "&#60;");
+    text = text.replace(/>/g, "&#62;");
+
+    // Variables used for tracking the line length
+    // Number of lines left
+    var deficit = pageLength - lineCount + 1;
+    var deficitCount = (printSpace.innerHTML
+        .substring(printSpace.innerHTML.length - deficit,
+                   printSpace.innerHTML.length)
+        .match(/\n/g) || []).length;
+
+    // Used to track a special case in which there is a line of text at the
+    // very end with multiple newlines after it
+    // We're using this marker instead because the if statement is pretty long
+    var specialMark = false;
+
+    console.log("deficit: " + deficit);
+    console.log("deficitCount: " + deficitCount);
+    if (text.substring(0, text.length - deficitCount).match(/\n/g) &&
+        (lineCount == pageLength) &&
+        (deficitCount == deficit))
+    {
+        console.log("special");
+        // It's the special case
+        specialMark = true;
+    }
+
+    // Check if a new page should be added
+    if (lineCount == pageLength ||
+        (lineCount > pageLength &&
+            (printSpace.innerHTML
+                .substring(printSpace.innerHTML.length - 1,
+                           printSpace.innerHTML.length)
+                .match(/\n/))))
+    {
+        // A new page should be added
+
+        // If this special case, print out the text first
+        if (specialMark)
+        {
+            printSpace.innerHTML = printSpace.innerHTML + text;
+            printSpace.innerHTML = printSpace.innerHTML.substring(0,
+                printSpace.innerHTML.length - deficit);
+            console.log("specialMark");
+        }
+
+        // Print the necessary newline character to space out the new
+        // page lines
+        printSpace.innerHTML = printSpace.innerHTML + "11111\n22222\n33333\n444444\n";
+
+        // Reset the page counter
+        lineCount = 3;
+
+        // If this is the special case, print out the necessary newlines
+        if (specialMark)
+        {
+            printSpace.innerHTML = printSpace.innerHTML + "\n";
+        }
+    }
+
+    // If it's not the special case, just print out the text
+    if (!specialMark)
+    {
+        printSpace.innerHTML = printSpace.innerHTML + text;
+    }
+
+    console.log(lineCount + ": " + text);
 }

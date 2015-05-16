@@ -13,6 +13,19 @@ body
     margin: 0 auto;
 }
 
+/*
+Place a vertical line on the page, going to use this for the UI refactoring
+document:before
+{
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    border: 1px solid gray;
+    top: 0;
+    left: 100px;
+}*/
+
 textarea
 {
     width: 100%;
