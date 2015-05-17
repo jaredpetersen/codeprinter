@@ -1,14 +1,13 @@
-Code Printer
+CodePrinter
 ============
-Code Printer's goal is pretty self-explanatory: to make it easier to print out
-code. I'm not really satisfied with the way many IDE's and text editors
-print code out. They either put silly headers on it, make the text too large, or
-don't provide code highlighting. The printing user interface typically leaves
-much to be desired as well. With Code Printer, you will be able to paste your
-code into a text box, select a language, and print your code.
+CodePrinter's goal is pretty self-explanatory: to make it easier to print out
+code. Many IDE's don't really do code printing right. They typically don't have
+code highlighting, don't allow you to change your font/font size, and/or add
+silly headers/footers on your code. CodePrinter makes it easy. Simply copy your
+code into the text box, select your desired font, font size, and programming
+language (more languages to come) and hit print.
 
 Development Status
 ==================
-Code Printer is under active development. There are a few bugs that need to be
-fixed (please check out the issues section) and a couple of features that need
-to be added before a version 1.0 is released.
+CodePrinter is under active development. A few key features need to be added
+before a version 1.0 is released.
