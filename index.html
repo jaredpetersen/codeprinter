@@ -1,122 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- CodePrinter (https://github.com/jaredpetersen/codeprinter)
-         Copyright (c) 2015 Jared Petersen
-         Licensed under MIT (https://github.com/jaredpetersen/codeprinter/blob/master/LICENSE) -->
-    <meta name="application-name" content="codeprinter">
-    <meta name="description" content="Program that allows you to print out code">
-    <meta name="author" content="Jared Petersen">
-    <link rel="icon" href="assets/images/printer.png">
+        <!-- CodePrinter (https://github.com/jaredpetersen/codeprinter)
+             Copyright (c) 2015 Jared Petersen
+             Licensed under MIT (https://github.com/jaredpetersen/codeprinter/blob/master/LICENSE) -->
+        <meta name="application-name" content="codeprinter">
+        <meta name="description" content="Program that allows you to print out code">
+        <meta name="author" content="Jared Petersen">
+        <link rel="icon" href="assets/images/printer.png">
 
-    <title>codeprinter</title>
+        <title>codeprinter</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
 
-  <body>
+    <body>
 
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <span class="navbar-brand"><span class="label label-success">codeprinter</span></span>
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="navbar-brand"><span class="label label-success">codeprinter</span></span>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Fonts -->
+                        <li class="dropdown">
+                            <a href="font" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-font" style="color: #777777;"></span>&nbsp;<span class="caret" style="color: #777777;"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Monospace</a></li>
+                                <li><a href="#">Courier</a></li>
+                                <li><a href="#">Lucida Sans</a></li>
+                            </ul>
+                        </li>
+                        <!-- Font sizes -->
+                        <li class="dropdown">
+                            <a href="size" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-text-size" style="color: #777777;"></span>&nbsp;<span class="caret" style="color: #777777;"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">8px</a></li>
+                                <li><a href="#">9px</a></li>
+                                <li><a href="#">10px</a></li>
+                                <li><a href="#">11px</a></li>
+                                <li><a href="#">12px</a></li>
+                                <li><a href="#">13px</a></li>
+                                <li><a href="#">14px</a></li>
+                          </ul>
+                        </li>
+                        <!-- Margins -->
+                        <!-- Possible feature... Let me know if that sounds interesting... -->
+                        <!-- Programming languages -->
+                        <li class="dropdown">
+                            <a href="size" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-console" style="color: #777777;"></span>&nbsp;<span class="caret" style="color: #777777;"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">None</a></li>
+                                <li><a href="#">Java</a></li>
+                                <li><a href="#">Python</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:undefined;" onClick="overallPrint();"><span class="glyphicon glyphicon-print" style="color: #777777;"></span></a></li>
+                        <!-- Will be used in a future release, no need to display it now -->
+                        <!-- <li><a href="#pdf"><span class="glyphicon glyphicon-file" style="color: #777777;"></span></a></li> -->
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="https://github.com/jaredpetersen/">
+                                <img src="assets/images/github.png" width="16px" style="padding-bottom: 5px;"></img>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/jaredpetersen/codeprinter">
+                                <span class="glyphicon glyphicon-heart" style="color: #D9534F;"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container">
+            <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Tip!</strong> You may want to disable printing the header and footer in your web browser
+            </div>
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Print your code!</h3>
+                </div>
+                <div class="panel-body">
+                    <textarea id="typeSpace" placeholder="Paste your code in here!"></textarea>
+                </div>
+            </div>
+
+            <!-- Used to store the printed code -->
+            <div id="printSpace" class="printSpace">Hello, and welcome to CodePrinter!<br />This is where your code will be printed out to!</div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="font" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-font" style="color: #777777;"></span>&nbsp;<span class="caret" style="color: #777777;"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Monospace</a></li>
-                <li><a href="#">Courier</a></li>
-                <li><a href="#">Lucida Sans</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="size" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-text-size" style="color: #777777;"></span>&nbsp;<span class="caret" style="color: #777777;"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">8px</a></li>
-                <li><a href="#">9px</a></li>
-                <li><a href="#">10px</a></li>
-                <li><a href="#">11px</a></li>
-                <li><a href="#">12px</a></li>
-                <li><a href="#">13px</a></li>
-                <li><a href="#">14px</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="size" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-console" style="color: #777777;"></span>&nbsp;<span class="caret" style="color: #777777;"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Python</a></li>
-                <li><a href="#">Java</a></li>
-              </ul>
-            </li>
-            <li><a href="javascript:undefined;" onClick="overallPrint();"><span class="glyphicon glyphicon-print" style="color: #777777;"></span></a></li>
-            <li><a href="#pdf"><span class="glyphicon glyphicon-file" style="color: #777777;"></span></a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="https://github.com/jaredpetersen/">
-                    <img src="assets/images/github.png" width="16px" style="padding-bottom: 5px;"></img>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/jaredpetersen/codeprinter">
-                    <span class="glyphicon glyphicon-heart" style="color: #D9534F;"></span>
-                </a>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
 
 
-    <div class="container">
-      <div class="alert alert-info alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>Tip!</strong> You may want to disable printing the header and footer in your web browser
-      </div>
-
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title">Print your code!</h3>
-        </div>
-        <div class="panel-body">
-          <textarea id="typeSpace" placeholder="Paste your code in here!"></textarea>
-        </div>
-    </div>
-
-    <div id="printSpace" class="printSpace">Hello, and welcome to CodePrinter!<br />This is where your code will be printed out to!</div>
-
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-    <!-- CodePrinter Specific Javascript -->
-    <script src="assets/js/codeprinter.min.js"></script>
-  </body>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+        <!-- CodePrinter specific Javascript -->
+        <script src="assets/js/codeprinter.min.js"></script>
+    </body>
 </html>
