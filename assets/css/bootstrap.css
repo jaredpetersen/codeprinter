@@ -183,8 +183,10 @@ textarea {
   border-color: transparent;
   outline: none;
   resize: none;
-  font-family: monospace !important;
-  font-size: 1em;
+}
+.typeSpace {
+    font-family: monospace;
+    font-size: 10px;
 }
 optgroup {
   font-weight: bold;
@@ -3456,6 +3458,18 @@ tbody.collapse.in {
   text-decoration: none;
   cursor: not-allowed;
   background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.dropdown-menu > .selected > a,
+.dropdown-menu > .selected > a:hover,
+.dropdown-menu > .selected > a:focus {
+  background-color: #F2DEDE;
+}
+.dropdown-menu > .selected > a:hover,
+.dropdown-menu > .selected > a:focus {
+  text-decoration: none;
+  background-color: #F2DEDE;
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
