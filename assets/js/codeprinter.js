@@ -27,9 +27,6 @@ function overallPrint()
         // Get the code
         var text = textSpace.value;
 
-        // Sanitize the text
-        text = text.replace(/'/g, "&#39;");
-
         // Highlight the code
         text = highlightCode(text);
 
