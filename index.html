@@ -27,6 +27,16 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        <!-- Syntax highlighting themes from Highlight.js -->
+        <!-- Do NOT change the order of the themes, it will break code highlighting -->
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github-gist.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/vs.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/xcode.min.css">
+
+        <!-- Highlighter.js -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+
     </head>
 
     <body>
@@ -74,14 +84,16 @@
                         </li>
                         <!-- Margins -->
                         <!-- Possible feature... Let me know if that sounds interesting... -->
-                        <!-- Programming languages -->
+
+                        <!-- Code Highlighting Themes -->
                         <li class="dropdown">
-                            <a href="size" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-console" style="color: #777777;"></span>&nbsp;<span class="caret" style="color: #777777;"></span></a>
+                            <a href="size" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-tint" style="color: #777777;"></span>&nbsp;<span class="caret" style="color: #777777;"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <!-- Default Language -->
-                                <li id="None" class="selected"><a href="#">None</a></li>
-                                <li id="Java"><a href="#">Java</a></li>
-                                <li id="Python"><a href="#">Python</a></li>
+                                <!-- Default Theme -->
+                                <li id="None" class="selected"><a href="javascript:undefined;" onClick="setTheme('None');">None</a></li>
+                                <li id="GitHub"><a href="javascript:undefined;" onClick="setTheme('GitHub');">GitHub</a></li>
+                                <li id="VS"><a href="javascript:undefined;" onClick="setTheme('VS');">VS</a></li>
+                                <li id="XCode"><a href="javascript:undefined;" onClick="setTheme('XCode');">XCode</a></li>
                             </ul>
                         </li>
                         <li><a href="javascript:undefined;" onClick="overallPrint();"><span class="glyphicon glyphicon-print" style="color: #777777;"></span></a></li>
@@ -132,7 +144,9 @@
         <script src="assets/js/bootstrap.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-        <!-- CodePrinter specific Javascript -->
+
+        <!-- CodePrinter specific Javascript
+        ================================================== -->
         <script src="assets/js/codeprinter.min.js"></script>
     </body>
 </html>

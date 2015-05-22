@@ -10,8 +10,9 @@ var printSpace = document.getElementById('printSpace');
 var fonts = ["Andale Mono", "Courier", "Droid Sans Mono", "Ubuntu Mono"];
 var fontSizes = ["8px", "9px", "10px", "11px", "12px", "13px", "14px","15px",
                  "16px"];
-var languages = ["None", "Java", "Python"];
-
+var themes = ["None", "VS", "XCode", "GitHub"];
+var currentTheme = "None";
+var stylesheetCount = "4";
 
 /**
  * Takes the data in the text box and formats it for printing on the page
@@ -28,9 +29,11 @@ function overallPrint()
 
         // Sanitize the text
         text = text.replace(/'/g, "&#39;");
-        text = text.replace(/"/g, "&#34;");
         text = text.replace(/</g, "&#60;");
         text = text.replace(/>/g, "&#62;");
+
+        // Highlight the code
+        text = highlightCode(text);
 
         // Print the text
         printSpace.innerHTML = printSpace.innerHTML + text;
@@ -42,7 +45,7 @@ function overallPrint()
 
 /**
  * Takes in a font and changes the printout font to match
- @param String the font the user wants
+ @param String The font the user wants
  **/
 function changeFont(font)
 {
@@ -61,6 +64,7 @@ function changeFont(font)
 
 /**
  * Takes in a font size and changes the printout font to match
+ * @param String The font size the user wants
  **/
 function changeSize(size)
 {
@@ -75,4 +79,68 @@ function changeSize(size)
     }
     document.getElementById(size).className="selected";
 
+}
+
+/**
+ * Takes in a language and changes the currentLanguage global variable
+ * @param String The language the user wants
+ **/
+function setTheme(theme)
+{
+    // Set the language to the user selected language
+    currentTheme = theme;
+    // Reset the navbar menu item highlighting
+    for (i in themes)
+    {
+        // Remove all highlighting
+        document.getElementById(themes[i]).className="";
+    }
+    document.getElementById(theme).className="selected";
+}
+
+/**
+ * Takes in code and outputs the highlighted version
+ * @param String The code the user wants to print
+ **/
+function highlightCode(code)
+{
+    document.styleSheets[2].disabled=true;
+
+    // The main language switchboard
+    // Keeping it seperate for when the program grows to support more themes
+    if (currentTheme == "None")
+    {
+        // No code highlighting here
+        return code;
+    }
+    else
+    {
+        // Change the theme depending on the user selection
+        for (i = 2; i <= stylesheetCount; i++)
+        {
+            if (currentTheme == "GitHub" && i == 2)
+            {
+                document.styleSheets[i].disabled=false;
+            }
+            else if (currentTheme == "VS" && i == 3)
+            {
+                document.styleSheets[i].disabled=false;
+            }
+            else if (currentTheme == "XCode" && i == 4)
+            {
+                document.styleSheets[i].disabled=false;
+            }
+            else
+            {
+                document.styleSheets[i].disabled=true;
+            }
+        }
+
+        // Use Highlight.js to highlight the code
+        // highlightAuto() detects the language on its own
+        // If it can't find the language, the code is still returned but not
+        // highlighted
+        code = hljs.highlightAuto(code).value;
+        return code;
+    }
 }
