@@ -213,7 +213,8 @@ th {
       font-family: monospace;
       white-space: pre-wrap;
       font-size: 10px;
-      /*padding: 25px;*/
+      padding-left: 10px;
+      padding-right: 10px;
   }
   textarea
   {
