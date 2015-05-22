@@ -10,9 +10,9 @@ var printSpace = document.getElementById('printSpace');
 var fonts = ["Andale Mono", "Courier", "Droid Sans Mono", "Ubuntu Mono"];
 var fontSizes = ["8px", "9px", "10px", "11px", "12px", "13px", "14px","15px",
                  "16px"];
-var themes = ["None", "VS", "XCode", "GitHub"];
+var themes = ["None", "GitHub", "VS", "XCode"];
 var currentTheme = "None";
-var stylesheetCount = "4";
+var stylesheetCount = 4;
 
 /**
  * Takes the data in the text box and formats it for printing on the page
@@ -29,14 +29,16 @@ function overallPrint()
 
         // Sanitize the text
         text = text.replace(/'/g, "&#39;");
-        text = text.replace(/</g, "&#60;");
-        text = text.replace(/>/g, "&#62;");
 
         // Highlight the code
         text = highlightCode(text);
 
         // Print the text
-        printSpace.innerHTML = printSpace.innerHTML + text;
+        printSpace.innerHTML = text;
+    }
+    else
+    {
+        printSpace.value = "Hello, and welcome to CodePrinter!<br />This is where your code will be printed out to!";
     }
 
     // Open the print window
@@ -104,16 +106,9 @@ function setTheme(theme)
  **/
 function highlightCode(code)
 {
-    document.styleSheets[2].disabled=true;
-
     // The main language switchboard
     // Keeping it seperate for when the program grows to support more themes
-    if (currentTheme == "None")
-    {
-        // No code highlighting here
-        return code;
-    }
-    else
+    if (currentTheme != "None")
     {
         // Change the theme depending on the user selection
         for (i = 2; i <= stylesheetCount; i++)
@@ -133,6 +128,7 @@ function highlightCode(code)
             else
             {
                 document.styleSheets[i].disabled=true;
+
             }
         }
 
@@ -141,6 +137,19 @@ function highlightCode(code)
         // If it can't find the language, the code is still returned but not
         // highlighted
         code = hljs.highlightAuto(code).value;
-        return code;
     }
+    else
+    {
+        // Disable all syntax highlighting stylesheets
+        for (i = 2; i <= stylesheetCount; i++)
+        {
+            document.styleSheets[i].disabled=true;
+        }
+
+        // Not using code highlighting, so we need to do more sanitation
+        code = code.replace(/</g, "&#60;");
+        code = code.replace(/>/g, "&#62;");
+    }
+
+    return code;
 }
