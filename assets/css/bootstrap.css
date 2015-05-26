@@ -3881,6 +3881,18 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   cursor: not-allowed;
   background-color: transparent;
 }
+#AnonymousPro {
+  font-family: 'Anonymous Pro';
+}
+#Courier {
+  font-family: 'Courier';
+}
+#CutiveMono {
+  font-family: 'Cutive Mono';
+}
+#DroidSansMono {
+  font-family: 'Droid Sans Mono';
+}
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
