@@ -7,7 +7,7 @@
 // Global variables
 var textSpace = document.getElementById('typeSpace');
 var printSpace = document.getElementById('printSpace');
-var fonts = ["Andale Mono", "Courier", "Droid Sans Mono", "Ubuntu Mono"];
+var fonts = ["AnonymousPro", "Courier", "CutiveMono", "DroidSansMono"];
 var fontSizes = ["8px", "9px", "10px", "11px", "12px", "13px", "14px","15px",
                  "16px"];
 var themes = ["None", "GitHub", "VS", "XCode"];
@@ -58,7 +58,7 @@ function changeFont(font)
         document.getElementById(fonts[i]).className="";
     }
     // Highlight the desired item
-    document.getElementById(font).className="selected";
+    document.getElementById(font.replace(/ /g, "")).className="selected";
 }
 
 /**
