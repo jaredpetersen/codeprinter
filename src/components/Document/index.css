@@ -1,0 +1,11 @@
+@media only print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+@media only screen {
+  .only-print {
+    display: none !important;
+  }
+}
