@@ -4,9 +4,13 @@ import {
   Col,
   Alert,
   Input } from 'reactstrap';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/styles/hljs';
 import './index.css';
 
 const Document = (props) => {
+  const code = 'console.log(\'This is where your code will be printed out!\');';
+
   return (
     <div>
       <Row className='no-print'>
@@ -23,7 +27,9 @@ const Document = (props) => {
         </Col>
       </Row>
 
-      <div id='printSpace' className='only-print'>This is where your code will be printed</div>
+      <div id='printSpace' className='only-print'>
+        <SyntaxHighlighter language='javascript' showLineNumbers={true} style={docco} customStyle={{ border: 'none' }}>{code}</SyntaxHighlighter>
+        </div>
     </div>
   )
 };

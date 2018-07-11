@@ -17,7 +17,8 @@ export default class NavBar extends React.Component {
     super(props);
 
     this.state = {
-      isOpen: false
+      isOpen: false,
+      sizes: Array.from({ length: 9 }, (x, i) => i + 8)
     };
 
     this.toggle = this.toggle.bind(this);
@@ -28,38 +29,41 @@ export default class NavBar extends React.Component {
   }
 
   render() {
+    const SizeDropdown = () => {
+      const dropdownItems = this.state.sizes.map(size => (<DropdownItem>{`${size}px`}</DropdownItem>));
+
+      return (
+        <UncontrolledDropdown nav inNavbar>
+          <DropdownToggle nav caret>
+            Size
+          </DropdownToggle>
+          <DropdownMenu right>
+            {dropdownItems}
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      );
+    }
+
     return (
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">codeprinter</NavbarBrand>
+      <Navbar color='light' light expand='md'>
+        <NavbarBrand href='/'>codeprinter</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="mr-auto" navbar>
+            <Nav className='mr-auto' navbar>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Font
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                    Font 1
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    Font 2
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Size
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <SizeDropdown />
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Color
@@ -74,19 +78,19 @@ export default class NavBar extends React.Component {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink href="/print">Print</NavLink>
+                <NavLink style={{ cursor: 'pointer' }} onClick={this.props.onPrint}>Print</NavLink>
               </NavItem>
             </Nav>
-            <Nav className="ml-auto" navbar>
+            <Nav className='ml-auto' navbar>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href='https://github.com/reactstrap/reactstrap'>GitHub</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/heart">Heart</NavLink>
+                <NavLink href='/heart'>Heart</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
       </Navbar>
-    )
+    );
   }
 }
