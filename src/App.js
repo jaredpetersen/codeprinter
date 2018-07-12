@@ -27,14 +27,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='h-100'>
         <Navbar
           font={this.state.style.font}
           size={this.state.style.size}
           onPrint={this.onPrint}
           onChange={this.onSizeChange} />
-        <div style={{ marginTop: 10 }} />
-        <Container>
+        <Container fluid={true} style={{ height: 'calc(100% - 76px)'}}>
           <Document />
         </Container>
       </div>
