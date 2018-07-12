@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
+import Toolbar from './components/Toolbar';
 import Document from './components/Document';
 import { Container } from 'reactstrap';
 
@@ -33,7 +34,8 @@ class App extends Component {
           size={this.state.style.size}
           onPrint={this.onPrint}
           onChange={this.onSizeChange} />
-        <Container fluid={true} style={{ height: 'calc(100% - 76px)'}}>
+        <Toolbar />
+        <Container fluid={true} className='responsive-container'>
           <Document />
         </Container>
       </div>

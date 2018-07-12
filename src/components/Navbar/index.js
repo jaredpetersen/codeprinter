@@ -45,7 +45,7 @@ export default class NavBar extends React.Component {
     }
 
     return (
-      <Navbar color='dark' dark expand='sm' className='flex-shrink-0' style={{ marginBottom: 10 }}>
+      <Navbar color='dark' dark expand='sm' className='flex-shrink-0'>
         <NavbarBrand href='/'>codeprinter</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
