@@ -7,10 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  Badge } from 'reactstrap';
 
 export default class NavBar extends React.Component {
   constructor(props) {
@@ -29,24 +26,9 @@ export default class NavBar extends React.Component {
   }
 
   render() {
-    const SizeDropdown = () => {
-      const dropdownItems = this.state.sizes.map(size => (<DropdownItem>{`${size}px`}</DropdownItem>));
-
-      return (
-        <UncontrolledDropdown nav inNavbar>
-          <DropdownToggle nav caret>
-            Size
-          </DropdownToggle>
-          <DropdownMenu right>
-            {dropdownItems}
-          </DropdownMenu>
-        </UncontrolledDropdown>
-      );
-    }
-
     return (
       <Navbar color='dark' dark expand='sm' className='flex-shrink-0'>
-        <NavbarBrand href='/'>codeprinter</NavbarBrand>
+        <NavbarBrand href='/'><Badge color="primary">codeprinter</Badge></NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='ml-auto' navbar>

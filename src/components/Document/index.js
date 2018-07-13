@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Row,
-  Col,
-  Form,
-  Input,
-  Button } from 'reactstrap';
+import { Row, Col, Input } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/styles/hljs';
 import './index.css';
