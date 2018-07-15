@@ -55,8 +55,8 @@ class Document extends Component {
             language='javascript'
             showLineNumbers={this.props.numbers}
             style={themeMap[this.props.theme] || ''}
-            codeTagProps={{ style: { fontFamily: `"${this.props.font}", monospace`, fontSize: `${this.props.size}` } }}
-            lineNumberStyle={{ fontFamily: `"${this.props.font}", monospace`, fontSize: `${this.props.size}` }}
+            codeTagProps={{ style: { fontFamily: `"${this.props.font}", monospace`, fontSize: `${this.props.size}pt` } }}
+            lineNumberStyle={{ fontFamily: `"${this.props.font}", monospace`, fontSize: `${this.props.size}pt` }}
             customStyle={{ border: 'none' }}
             >
               {this.state.code}

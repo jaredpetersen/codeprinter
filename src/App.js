@@ -27,7 +27,7 @@ class App extends Component {
       'Ubuntu Mono'
     ];
 
-    this.sizes = [ '8pt', '9pt', '10pt', '11pt', '12pt', '13pt', '14pt', '15pt', '16pt', '17pt', '18pt' ];
+    this.sizes = [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ];
 
     this.themes = [ 'None', ...Object.keys(themeMap) ];
 
