@@ -4,7 +4,8 @@ import DropdownToggleSelect from '../../DropdownToggleSelect';
 
 const FontDropdown = (props) => {
   const dropdownItems = props.fonts.map(font => {
-    return (<DropdownItem key={font} active={font === props.active} style={{ fontFamily: `"${font}", monospace`}}>{font}</DropdownItem>);
+    return (
+      <DropdownItem key={font} active={font === props.active} onClick={props.onSelect.bind(null, font)} style={{ fontFamily: `"${font}", monospace`}}>{font}</DropdownItem>);
   });
 
   return (

@@ -3,7 +3,7 @@ import { UncontrolledDropdown, DropdownMenu, DropdownItem } from 'reactstrap';
 import DropdownToggleSelect from '../../DropdownToggleSelect';
 
 const ThemeDropdown = (props) => {
-  const dropdownItems = props.themes.map(theme => (<DropdownItem key={theme} active={theme === props.active}>{theme}</DropdownItem>));
+  const dropdownItems = props.themes.map(theme => (<DropdownItem key={theme} active={theme === props.active} onClick={props.onSelect.bind(null, theme)}>{theme}</DropdownItem>));
 
   return (
     <UncontrolledDropdown inNavbar>
