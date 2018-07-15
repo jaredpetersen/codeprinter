@@ -9,6 +9,7 @@ import {
   NavLink,
   Badge,
  } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 export default class NavBar extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <Navbar color='dark' dark expand='sm' className='flex-shrink-0'>
-        <NavbarBrand href='/'><Badge color="success">codeprinter</Badge></NavbarBrand>
+        <NavbarBrand tag={Link} to='/'><Badge color="success">codeprinter</Badge></NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='ml-auto' navbar>
@@ -37,7 +38,7 @@ export default class NavBar extends React.Component {
                 <NavLink href='https://github.com/jaredpetersen/codeprinter' target='_blank'><i className="fab fa-github-alt text-white" title='GitHub'></i></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href='/heart'><i className="fas fa-heart text-danger" title='Heart'></i></NavLink>
+                <NavLink tag={Link} to='/heart'><i className="fas fa-heart text-danger" title='Heart'></i></NavLink>
               </NavItem>
             </Nav>
           </Collapse>
