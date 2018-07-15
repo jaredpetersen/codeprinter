@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import Toolbar from '../../components/Toolbar';
-import { Document, themeMap } from '../../components/Document';
+import Toolbar from './toolbar';
+import { Document, themeMap } from './document';
 
 class Editor extends Component {
   constructor(props) {

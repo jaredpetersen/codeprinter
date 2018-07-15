@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Navbar, Button } from 'reactstrap';
-import FontDropdown from './FontDropdown';
-import SizeDropdown from './SizeDropdown';
-import ThemeDropdown from './ThemeDropdown';
+import FontDropdown from './font-dropdown';
+import SizeDropdown from './size-dropdown';
+import ThemeDropdown from './theme-dropdown';
 
 const ToolBar = (props) => {
   return (

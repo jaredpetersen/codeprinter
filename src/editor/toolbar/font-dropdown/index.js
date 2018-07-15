@@ -1,6 +1,6 @@
 import React from 'react';
 import { UncontrolledDropdown, DropdownMenu, DropdownItem } from 'reactstrap';
-import DropdownToggleSelect from '../../DropdownToggleSelect';
+import DropdownToggleSelect from '../../../common/dropdown-toggle-select';
 
 const FontDropdown = (props) => {
   const dropdownItems = props.fonts.map(font => {

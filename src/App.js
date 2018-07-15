@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Editor from './containers/Editor';
-import Heart from './components/Heart';
-import NotFound from './components/NotFound';
+import Navbar from './navbar';
+import Editor from './editor';
+import Heart from './heart';
+import NotFound from './not-found';
 
 class App extends Component {
   constructor(props) {
