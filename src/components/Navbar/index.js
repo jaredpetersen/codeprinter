@@ -34,10 +34,10 @@ export default class NavBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='ml-auto' navbar>
               <NavItem>
-                <NavLink href='https://github.com/reactstrap/reactstrap'>GitHub</NavLink>
+                <NavLink href='https://github.com/jaredpetersen/codeprinter' target='_blank'><i className="fab fa-github-alt text-white" title='GitHub'></i></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href='/heart'>Heart</NavLink>
+                <NavLink href='/heart'><i className="fas fa-heart text-danger" title='Heart'></i></NavLink>
               </NavItem>
             </Nav>
           </Collapse>

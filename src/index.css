@@ -8,13 +8,13 @@ body, html, #root {
   height: 100%;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 767px) {
   .responsive-container {
     height: calc(100% - 254px)
   }
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
   .responsive-container {
     height: calc(100% - 130px)
   }
