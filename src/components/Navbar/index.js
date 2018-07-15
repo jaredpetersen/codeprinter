@@ -7,7 +7,8 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Badge } from 'reactstrap';
+  Badge,
+ } from 'reactstrap';
 
 export default class NavBar extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <Navbar color='dark' dark expand='sm' className='flex-shrink-0'>
-        <NavbarBrand href='/'><Badge color="primary">codeprinter</Badge></NavbarBrand>
+        <NavbarBrand href='/'><Badge color="success">codeprinter</Badge></NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='ml-auto' navbar>
