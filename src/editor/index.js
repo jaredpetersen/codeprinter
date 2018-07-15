@@ -52,7 +52,7 @@ class Editor extends Component {
 
   render() {
     return (
-      <div className='h-100'>
+      <div className='responsive-container'>
         <Toolbar
           fonts={this.fonts} activeFont={this.state.style.font}
           sizes={this.sizes} activeSize={this.state.style.size}
@@ -60,7 +60,7 @@ class Editor extends Component {
           activeNumbers={this.state.style.numbers}
           onChange={this.onChange}
           onPrint={this.onPrint} />
-        <Container fluid={true} className='responsive-container'>
+        <Container fluid={true} className='h-100'>
           <Document
             font={this.state.style.font}
             size={this.state.style.size}
