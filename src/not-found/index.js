@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const NotFound = (props) => {
+const NotFound = () => {
   return (
     <Container fluid={true} className='responsive-container' style={{ marginTop: 10 }}>
       <Row>
@@ -15,5 +15,7 @@ const NotFound = (props) => {
     </Container>
   );
 };
+
+NotFound.propTypes = { };
 
 export default NotFound;

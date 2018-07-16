@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col, Input } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { defaultStyle, arduinoLight, ascetic, docco, githubGist, grayscale, idea, tomorrow, vs, xcode } from 'react-syntax-highlighter/styles/hljs';
@@ -66,6 +67,13 @@ class Document extends Component {
     );
   }
 }
+
+Document.propTypes = {
+  font: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
+  theme: PropTypes.oneOf([ 'None', ...Object.keys(themeMap) ]).isRequired,
+  numbers: PropTypes.bool.isRequired
+};
 
 export default Document;
 export { Document, themeMap };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-const Heart = (props) => {
+const Heart = () => {
   return (
     <Container fluid={true} className='responsive-container' style={{ marginTop: 10 }}>
       <Row>
@@ -20,5 +20,7 @@ const Heart = (props) => {
     </Container>
   );
 };
+
+Heart.propTypes = { };
 
 export default Heart;

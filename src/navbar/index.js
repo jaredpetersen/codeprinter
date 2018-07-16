@@ -11,7 +11,7 @@ import {
  } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-export default class NavBar extends React.Component {
+class CustomNavbar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -46,3 +46,7 @@ export default class NavBar extends React.Component {
     );
   }
 }
+
+CustomNavbar.propTypes = { };
+
+export default CustomNavbar;

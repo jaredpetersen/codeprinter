@@ -1,18 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { DropdownToggle } from 'reactstrap';
 import './index.css';
 
 const DropdownToggleSelect = (props) => {
-  const massagedProps = Object.assign({}, props);
-  if (massagedProps.caret) delete massagedProps.caret;
-  if (massagedProps.color) delete massagedProps.color;
-  if (massagedProps.outline) delete massagedProps.outline;
-
-  const style = Object.assign({}, { textAlign: 'left' }, massagedProps.style);
+  const style = Object.assign({}, { textAlign: 'left' }, props.style);
 
   return (
-    <DropdownToggle outline color='dropdown-toggle-select' block {...massagedProps} className='dropdown-toggle-select' style={style}/>
+    <DropdownToggle outline color='dropdown-toggle-select' block {...props} className='dropdown-toggle-select' style={style}/>
   );
+};
+
+// Rely on the propTypes provided by reacstrap
+DropdownToggleSelect.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  'data-toggle': PropTypes.string,
+  'aria-haspopup': PropTypes.bool,
+  // For DropdownToggle usage inside a Nav
+  nav: PropTypes.bool,
+  // Defaults to Button component
+  tag: PropTypes.any
 };
 
 export default DropdownToggleSelect;

@@ -72,4 +72,6 @@ class Editor extends Component {
   }
 }
 
+Editor.propTypes = { };
+
 export default Editor;
