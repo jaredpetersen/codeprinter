@@ -2,12 +2,15 @@
   "name": "codeprinter",
   "version": "1.0.0",
   "private": true,
+  "homepage": "http://jaredpetersen.github.io/codeprinter",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -18,7 +21,12 @@
       "!setupTests.js",
       "!src/**/*.story.{js,jsx}"
     ],
-    "coverageReporters": [ "json", "lcov", "html", "text" ]
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "html",
+      "text"
+    ]
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
@@ -39,6 +47,7 @@
     "@storybook/react": "^3.4.8",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
+    "gh-pages": "^1.2.0",
     "react-test-renderer": "^16.4.1"
   }
 }
