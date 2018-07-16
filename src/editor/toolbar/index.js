@@ -4,7 +4,7 @@ import FontDropdown from './font-dropdown';
 import SizeDropdown from './size-dropdown';
 import ThemeDropdown from './theme-dropdown';
 
-const ToolBar = (props) => {
+const Toolbar = (props) => {
   return (
     <Navbar color='#FFFFFF' light expand='sm' style={{ marginBottom: 5 }}>
       <div className='form-row' style={{ width: '100%' }}>
@@ -28,4 +28,4 @@ const ToolBar = (props) => {
   );
 };
 
-export default ToolBar;
+export default Toolbar;
