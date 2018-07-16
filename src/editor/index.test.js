@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import Editor from './index.js';
 
-describe('App', () => {
+describe('Editor', () => {
   it('renders without crashing', () => {
-    shallow(<App />);
+    shallow(<Editor />);
   });
 });
