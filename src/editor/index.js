@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import Toolbar from './toolbar';
-import { Document, themeMap } from './document';
+import { Document, themes } from './document';
 
 class Editor extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class Editor extends Component {
 
     this.sizes = [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ];
 
-    this.themes = [ 'None', ...Object.keys(themeMap) ];
+    this.themes = [ 'None', ...themes ];
 
     this.state = {
       style: {

@@ -19,10 +19,10 @@ const Toolbar = ({ fonts, activeFont, sizes, activeSize, themes, activeTheme, ac
           <ThemeDropdown themes={themes} active={activeTheme} onSelect={onChange.bind(null, 'theme')}/>
         </Col>
         <Col xs='3' md='auto' className='my-2 my-md-0'>
-          <Button active={activeNumbers} outline color='secondary' style={{ width: '100%' }} onClick={onChange.bind(null, 'numbers', !activeNumbers)}>#</Button>
+          <Button id='line-numbers' active={activeNumbers} outline color='secondary' style={{ width: '100%' }} onClick={onChange.bind(null, 'numbers', !activeNumbers)}>#</Button>
         </Col>
         <Col xs='12' md='auto' className='my-2 my-md-0'>
-          <Button outline color='success' onClick={onPrint} style={{ width: '100%' }}>Print</Button>
+          <Button id='print' outline color='success' onClick={onPrint} style={{ width: '100%' }}>Print</Button>
         </Col>
       </div>
     </Navbar>

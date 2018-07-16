@@ -18,6 +18,8 @@ const themeMap = {
   'Xcode': xcode
 };
 
+const themes = Object.keys(themeMap);
+
 class Document extends Component {
   constructor(props) {
     super(props);
@@ -53,7 +55,6 @@ class Document extends Component {
 
         <div id='printSpace' className='only-print' style={{ fontSize: '62.5%'}}>
           <SyntaxHighlighter
-            language='javascript'
             showLineNumbers={this.props.numbers}
             style={themeMap[this.props.theme] || ''}
             codeTagProps={{ style: { fontFamily: `"${this.props.font}", monospace`, fontSize: `${this.props.size}pt` } }}
@@ -76,4 +77,4 @@ Document.propTypes = {
 };
 
 export default Document;
-export { Document, themeMap };
+export { Document, themes };
