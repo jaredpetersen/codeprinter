@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound renders correctly 1`] = `
+<div
+  className="responsive-container container-fluid"
+  style={
+    Object {
+      "marginTop": 10,
+    }
+  }
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <h2>
+        <i
+          className="fas fa-map-signs text-warning"
+        />
+         404 Not Found
+      </h2>
+      <hr />
+      <p>
+        It looks like you're lost. Let's go 
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          home
+        </a>
+        .
+      </p>
+    </div>
+  </div>
+</div>
+`;
