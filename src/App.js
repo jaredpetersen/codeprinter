@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './navbar';
 import Editor from './editor';
 import Heart from './heart';
@@ -9,13 +9,13 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { };
+    this.state = {};
   }
 
   render() {
     return (
       <Router basename={process.env.PUBLIC_URL}>
-        <div className='h-100'>
+        <div className="h-100">
           <Navbar />
           <Switch>
             <Route exact path="/" component={Editor} />

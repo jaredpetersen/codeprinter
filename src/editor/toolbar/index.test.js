@@ -7,46 +7,46 @@ import ThemeDropdown from './theme-dropdown';
 
 describe('Editor Toolbar', () => {
   it('renders without crashing', () => {
-    const fonts = [
-      'Anonymous Pro',
-      'Cousine',
-      'Cutive Mono',
-    ];
+    const fonts = ['Anonymous Pro', 'Cousine', 'Cutive Mono'];
 
-    const sizes = [ 8, 9, 10, 11, 12 ];
+    const sizes = [8, 9, 10, 11, 12];
 
-    const themes = [ 'GitHub', 'VS', 'Xcode' ];
+    const themes = ['GitHub', 'VS', 'Xcode'];
 
     shallow(
       <Toolbar
-        fonts={fonts} activeFont={fonts[0]}
-        sizes={sizes} activeSize={sizes[0]}
-        themes={themes} activeTheme={themes[0]}
+        fonts={fonts}
+        activeFont={fonts[0]}
+        sizes={sizes}
+        activeSize={sizes[0]}
+        themes={themes}
+        activeTheme={themes[0]}
         activeNumbers={false}
         onChange={() => {}}
-        onPrint={() => {}} />
+        onPrint={() => {}}
+      />
     );
   });
 
   it('renders the fonts in a dropdown', () => {
-    const fonts = [
-      'Anonymous Pro',
-      'Cousine',
-      'Cutive Mono',
-    ];
+    const fonts = ['Anonymous Pro', 'Cousine', 'Cutive Mono'];
 
-    const sizes = [ 8, 9, 10, 11, 12 ];
+    const sizes = [8, 9, 10, 11, 12];
 
-    const themes = [ 'GitHub', 'VS', 'Xcode' ];
+    const themes = ['GitHub', 'VS', 'Xcode'];
 
     const toolbar = shallow(
       <Toolbar
-        fonts={fonts} activeFont={fonts[0]}
-        sizes={sizes} activeSize={sizes[0]}
-        themes={themes} activeTheme={themes[0]}
+        fonts={fonts}
+        activeFont={fonts[0]}
+        sizes={sizes}
+        activeSize={sizes[0]}
+        themes={themes}
+        activeTheme={themes[0]}
         activeNumbers={false}
         onChange={() => {}}
-        onPrint={() => {}} />
+        onPrint={() => {}}
+      />
     );
 
     const fontDropdown = toolbar.find(FontDropdown);
@@ -56,24 +56,24 @@ describe('Editor Toolbar', () => {
   });
 
   it('renders the sizes in a dropdown', () => {
-    const fonts = [
-      'Anonymous Pro',
-      'Cousine',
-      'Cutive Mono',
-    ];
+    const fonts = ['Anonymous Pro', 'Cousine', 'Cutive Mono'];
 
-    const sizes = [ 8, 9, 10, 11, 12 ];
+    const sizes = [8, 9, 10, 11, 12];
 
-    const themes = [ 'GitHub', 'VS', 'Xcode' ];
+    const themes = ['GitHub', 'VS', 'Xcode'];
 
     const toolbar = shallow(
       <Toolbar
-        fonts={fonts} activeFont={fonts[0]}
-        sizes={sizes} activeSize={sizes[0]}
-        themes={themes} activeTheme={themes[0]}
+        fonts={fonts}
+        activeFont={fonts[0]}
+        sizes={sizes}
+        activeSize={sizes[0]}
+        themes={themes}
+        activeTheme={themes[0]}
         activeNumbers={false}
         onChange={() => {}}
-        onPrint={() => {}} />
+        onPrint={() => {}}
+      />
     );
 
     const sizeDropdown = toolbar.find(SizeDropdown);
@@ -83,24 +83,24 @@ describe('Editor Toolbar', () => {
   });
 
   it('renders the themes in a dropdown', () => {
-    const fonts = [
-      'Anonymous Pro',
-      'Cousine',
-      'Cutive Mono',
-    ];
+    const fonts = ['Anonymous Pro', 'Cousine', 'Cutive Mono'];
 
-    const sizes = [ 8, 9, 10, 11, 12 ];
+    const sizes = [8, 9, 10, 11, 12];
 
-    const themes = [ 'GitHub', 'VS', 'Xcode' ];
+    const themes = ['GitHub', 'VS', 'Xcode'];
 
     const toolbar = shallow(
       <Toolbar
-        fonts={fonts} activeFont={fonts[0]}
-        sizes={sizes} activeSize={sizes[0]}
-        themes={themes} activeTheme={themes[0]}
+        fonts={fonts}
+        activeFont={fonts[0]}
+        sizes={sizes}
+        activeSize={sizes[0]}
+        themes={themes}
+        activeTheme={themes[0]}
         activeNumbers={false}
         onChange={() => {}}
-        onPrint={() => {}} />
+        onPrint={() => {}}
+      />
     );
 
     const themeDropdown = toolbar.find(ThemeDropdown);

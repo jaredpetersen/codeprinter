@@ -4,11 +4,8 @@ import { action } from '@storybook/addon-actions';
 import 'bootstrap/dist/css/bootstrap.css';
 import ThemeDropdown from './index.js';
 
-storiesOf('Editor/Toolbar/ThemeDropdown', module)
-  .add('default', () => {
-    const themes = [ 'GitHub', 'VS', 'Xcode' ];
+storiesOf('Editor/Toolbar/ThemeDropdown', module).add('default', () => {
+  const themes = ['GitHub', 'VS', 'Xcode'];
 
-    return (
-      <ThemeDropdown themes={themes} active={themes[0]} onSelect={action('selected')}/>
-    );
-  });
+  return <ThemeDropdown themes={themes} active={themes[0]} onSelect={action('selected')} />;
+});

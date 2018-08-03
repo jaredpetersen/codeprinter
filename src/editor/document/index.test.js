@@ -11,9 +11,10 @@ describe('Editor Document', () => {
 
   it('renders the print section with some default code when text is not provided', () => {
     const document = shallow(<Document font={'Anonymous Pro'} size={12} theme={'GitHub'} numbers={true} />);
-    const expectedDefaultCode = '// Welcome to codeprinter!\n' +
+    const expectedDefaultCode =
+      '// Welcome to codeprinter!\n' +
       'const foo = () => {\n' +
-      '  console.log(\'This is where your code will be printed out!\');\n' +
+      "  console.log('This is where your code will be printed out!');\n" +
       '};';
     const syntaxHighlighter = document.find(SyntaxHighlighter);
 
@@ -42,7 +43,8 @@ describe('Editor Document', () => {
 
   it('renders the placeholder with an extra note when line numbers are enabled', () => {
     const document = shallow(<Document font={'Anonymous Pro'} size={12} theme={'GitHub'} numbers={true} />);
-    const expectedPlaceholder = 'Paste your code in here! \nIf you have some lines that are longer than the page width, the line numbers won\'t be fully accurate. To correct for this, add a few extra new lines to the bottom of your code.';
+    const expectedPlaceholder =
+      "Paste your code in here! \nIf you have some lines that are longer than the page width, the line numbers won't be fully accurate. To correct for this, add a few extra new lines to the bottom of your code.";
 
     const textarea = document.find(Input);
 
@@ -85,7 +87,9 @@ describe('Editor Document', () => {
 
   it('renders the code with the specified line numbers', () => {
     const expectedLineNumbersEnabled = true;
-    const document = shallow(<Document font={'Anonymous Pro'} size={12} theme={'GitHub'} numbers={expectedLineNumbersEnabled} />);
+    const document = shallow(
+      <Document font={'Anonymous Pro'} size={12} theme={'GitHub'} numbers={expectedLineNumbersEnabled} />
+    );
 
     const syntaxHighlighter = document.find(SyntaxHighlighter);
 

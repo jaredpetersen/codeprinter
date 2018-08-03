@@ -3,11 +3,6 @@ import { storiesOf } from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Document from './index.js';
 
-storiesOf('Editor/Document', module)
-  .add('default', () => (
-    <Document
-      font={'Anonymous Pro'}
-      size={12}
-      theme={'GitHub'}
-      numbers={true} />
-  ));
+storiesOf('Editor/Document', module).add('default', () => (
+  <Document font={'Anonymous Pro'} size={12} theme={'GitHub'} numbers={true} />
+));

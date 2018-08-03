@@ -9,9 +9,7 @@ describe('Heart', () => {
   });
 
   it('renders correctly', () => {
-    const tree = renderer
-      .create(<Heart />)
-      .toJSON();
+    const tree = renderer.create(<Heart />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });

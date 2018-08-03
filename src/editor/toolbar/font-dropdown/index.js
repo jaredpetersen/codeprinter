@@ -6,15 +6,21 @@ import DropdownToggleSelect from '../../../common/dropdown-toggle-select';
 const FontDropdown = ({ fonts, active, onSelect }) => {
   const dropdownItems = fonts.map(font => {
     return (
-      <DropdownItem key={font} active={font === active} onClick={onSelect.bind(null, font)} style={{ fontFamily: `"${font}", monospace`}}>{font}</DropdownItem>);
+      <DropdownItem
+        key={font}
+        active={font === active}
+        onClick={onSelect.bind(null, font)}
+        style={{ fontFamily: `"${font}", monospace` }}
+      >
+        {font}
+      </DropdownItem>
+    );
   });
 
   return (
     <UncontrolledDropdown inNavbar>
       <DropdownToggleSelect style={{ fontFamily: `"${active}", monospace` }}>{active}</DropdownToggleSelect>
-      <DropdownMenu>
-        {dropdownItems}
-      </DropdownMenu>
+      <DropdownMenu>{dropdownItems}</DropdownMenu>
     </UncontrolledDropdown>
   );
 };
