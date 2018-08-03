@@ -24,23 +24,17 @@ exports[`Heart renders correctly 1`] = `
       </h2>
       <hr />
       <p>
-        That's awesome! Let the developer know on Twitter (
+        That's awesome! Let the developer know on 
         <a
           href="https://twitter.com/jaredtpetersen"
           rel="noopener noreferrer"
           target="_blank"
         >
-          @jaredtpetersen
-        </a>
-        ), shoot him an 
-        <a
-          href="mailto:jaredtoddpetersen@gmail.com"
-        >
-          email
+          Twitter
         </a>
         , 
         <a
-          href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=JGJAC7UKRAB9J&lc=US&item_name=CodePrinter%20%2d%20Buy%20me%20a%20Coffee&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"
+          href="https://paypal.me/jaredtpetersen"
           rel="noopener noreferrer"
           target="_blank"
         >
