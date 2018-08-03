@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Document, themes } from './index.js';
+import { Document, themes } from './index';
 import { Input } from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 

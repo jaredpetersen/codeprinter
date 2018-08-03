@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Toolbar from './index.js';
+import Toolbar from './index';
 import FontDropdown from './font-dropdown';
 import SizeDropdown from './size-dropdown';
 import ThemeDropdown from './theme-dropdown';

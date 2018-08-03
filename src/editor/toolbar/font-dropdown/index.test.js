@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FontDropdown from './index.js';
+import FontDropdown from './index';
 import { DropdownItem } from 'reactstrap';
 
 describe('Editor Toolbar FontDropdown', () => {

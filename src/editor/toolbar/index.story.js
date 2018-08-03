@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import 'bootstrap/dist/css/bootstrap.css';
-import Toolbar from './index.js';
+import Toolbar from './index';
 
 storiesOf('Editor/Toolbar', module).add('default', () => {
   const fonts = ['Anonymous Pro', 'Cousine', 'Cutive Mono'];

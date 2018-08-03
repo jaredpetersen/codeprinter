@@ -35,19 +35,22 @@ class Document extends Component {
   constructor(props) {
     super(props);
 
+    this.defaultCode =
+      '// Welcome to codeprinter!\n' +
+      'const foo = () => {\n' +
+      "  console.log('This is where your code will be printed out!');\n" +
+      '};';
+
     this.state = {
-      code:
-        '// Welcome to codeprinter!\n' +
-        'const foo = () => {\n' +
-        "  console.log('This is where your code will be printed out!');\n" +
-        '};'
+      code: this.defaultCode
     };
 
     this.onChange = this.onChange.bind(this);
   }
 
   onChange(event) {
-    this.setState({ code: event.target.value });
+    const code = event.target.value === '' ? this.defaultCode : event.target.value;
+    this.setState({ code });
   }
 
   render() {

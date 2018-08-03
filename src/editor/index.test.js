@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Editor from './index.js';
+import Editor from './index';
 import Toolbar from './toolbar';
 import Document from './document';
 import FontDropdown from './toolbar/font-dropdown';

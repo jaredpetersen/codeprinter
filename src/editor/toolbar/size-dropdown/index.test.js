@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SizeDropdown from './index.js';
+import SizeDropdown from './index';
 import { DropdownItem } from 'reactstrap';
 
 describe('Editor Toolbar SizeDropdown', () => {

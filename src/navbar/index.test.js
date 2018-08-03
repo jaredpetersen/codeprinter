@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Navbar from './index.js';
+import Navbar from './index';
 import { NavbarToggler, Collapse } from 'reactstrap';
 
 describe('Navbar', () => {
