@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Editor from './index.js';
+import Editor from './index';
 import Toolbar from './toolbar';
 import Document from './document';
 import FontDropdown from './toolbar/font-dropdown';
@@ -39,7 +39,7 @@ describe('Editor', () => {
     expect(toolbar.prop('fonts')).toEqual(expectedFonts);
     expect(toolbar.prop('activeFont')).toEqual(expectedFonts[11]);
 
-    const expectedSizes = [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ];
+    const expectedSizes = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
     expect(toolbar.prop('sizes')).toEqual(expectedSizes);
     expect(toolbar.prop('activeSize')).toEqual(expectedSizes[2]);
@@ -78,7 +78,10 @@ describe('Editor', () => {
     global.print = jest.fn();
     const editor = shallow(<Editor />);
     const toolbar = editor.find(Toolbar);
-    const printButton = toolbar.dive().find(Button).find('#print');
+    const printButton = toolbar
+      .dive()
+      .find(Button)
+      .find('#print');
 
     printButton.simulate('click');
 

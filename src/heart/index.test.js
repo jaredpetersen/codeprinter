@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
-import Heart from './index.js';
+import Heart from './index';
 
 describe('Heart', () => {
   it('renders without crashing', () => {
@@ -9,9 +9,7 @@ describe('Heart', () => {
   });
 
   it('renders correctly', () => {
-    const tree = renderer
-      .create(<Heart />)
-      .toJSON();
+    const tree = renderer.create(<Heart />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });

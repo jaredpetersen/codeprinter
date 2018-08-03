@@ -4,14 +4,16 @@ import { UncontrolledDropdown, DropdownMenu, DropdownItem } from 'reactstrap';
 import DropdownToggleSelect from '../../../common/dropdown-toggle-select';
 
 const SizeDropdown = ({ sizes, active, onSelect }) => {
-  const dropdownItems = sizes.map(size => (<DropdownItem key={size} active={size === active} onClick={onSelect.bind(null, size)}>{size}</DropdownItem>));
+  const dropdownItems = sizes.map(size => (
+    <DropdownItem key={size} active={size === active} onClick={onSelect.bind(null, size)}>
+      {size}
+    </DropdownItem>
+  ));
 
   return (
     <UncontrolledDropdown inNavbar>
       <DropdownToggleSelect>{active}</DropdownToggleSelect>
-      <DropdownMenu>
-        {dropdownItems}
-      </DropdownMenu>
+      <DropdownMenu>{dropdownItems}</DropdownMenu>
     </UncontrolledDropdown>
   );
 };

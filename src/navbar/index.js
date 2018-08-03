@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Badge,
- } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Badge } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 class CustomNavbar extends React.Component {
@@ -29,24 +20,30 @@ class CustomNavbar extends React.Component {
 
   render() {
     return (
-      <Navbar color='dark' dark expand='sm' className='flex-shrink-0'>
-        <NavbarBrand tag={Link} to='/'><Badge color="success">codeprinter</Badge></NavbarBrand>
+      <Navbar color="dark" dark expand="sm" className="flex-shrink-0">
+        <NavbarBrand tag={Link} to="/">
+          <Badge color="success">codeprinter</Badge>
+        </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className='ml-auto' navbar>
-              <NavItem>
-                <NavLink href='https://github.com/jaredpetersen/codeprinter' target='_blank'><i className="fab fa-github-alt text-white" title='GitHub'></i></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} to='/heart'><i className="fas fa-heart text-danger" title='Heart'></i></NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink href="https://github.com/jaredpetersen/codeprinter" target="_blank">
+                <i className="fab fa-github-alt text-white" title="GitHub" />
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/heart">
+                <i className="fas fa-heart text-danger" title="Heart" />
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
       </Navbar>
     );
   }
 }
 
-CustomNavbar.propTypes = { };
+CustomNavbar.propTypes = {};
 
 export default CustomNavbar;

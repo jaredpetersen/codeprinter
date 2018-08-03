@@ -3,11 +3,18 @@ import PropTypes from 'prop-types';
 import { DropdownToggle } from 'reactstrap';
 import './index.css';
 
-const DropdownToggleSelect = (props) => {
+const DropdownToggleSelect = props => {
   const style = Object.assign({}, { textAlign: 'left' }, props.style);
 
   return (
-    <DropdownToggle outline color='dropdown-toggle-select' block {...props} className='dropdown-toggle-select' style={style}/>
+    <DropdownToggle
+      outline
+      color="dropdown-toggle-select"
+      block
+      {...props}
+      className="dropdown-toggle-select"
+      style={style}
+    />
   );
 };
 

@@ -26,9 +26,9 @@ class Editor extends Component {
       'Ubuntu Mono'
     ];
 
-    this.sizes = [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 ];
+    this.sizes = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
-    this.themes = [ 'None', ...themes ];
+    this.themes = ['None', ...themes];
 
     this.state = {
       style: {
@@ -47,31 +47,36 @@ class Editor extends Component {
   }
 
   onChange(type, value) {
-    this.setState({ style: { ...this.state.style, [type]: value }});
+    this.setState({ style: { ...this.state.style, [type]: value } });
   }
 
   render() {
     return (
-      <div className='responsive-container'>
+      <div className="responsive-container">
         <Toolbar
-          fonts={this.fonts} activeFont={this.state.style.font}
-          sizes={this.sizes} activeSize={this.state.style.size}
-          themes={this.themes} activeTheme={this.state.style.theme}
+          fonts={this.fonts}
+          activeFont={this.state.style.font}
+          sizes={this.sizes}
+          activeSize={this.state.style.size}
+          themes={this.themes}
+          activeTheme={this.state.style.theme}
           activeNumbers={this.state.style.numbers}
           onChange={this.onChange}
-          onPrint={this.onPrint} />
-        <Container fluid={true} className='h-100'>
+          onPrint={this.onPrint}
+        />
+        <Container fluid={true} className="h-100">
           <Document
             font={this.state.style.font}
             size={this.state.style.size}
             theme={this.state.style.theme}
-            numbers={this.state.style.numbers} />
+            numbers={this.state.style.numbers}
+          />
         </Container>
       </div>
     );
   }
 }
 
-Editor.propTypes = { };
+Editor.propTypes = {};
 
 export default Editor;

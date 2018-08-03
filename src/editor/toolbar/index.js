@@ -7,22 +7,33 @@ import ThemeDropdown from './theme-dropdown';
 
 const Toolbar = ({ fonts, activeFont, sizes, activeSize, themes, activeTheme, activeNumbers, onChange, onPrint }) => {
   return (
-    <Navbar color='#FFFFFF' light expand='sm' style={{ marginBottom: 5 }}>
-      <div className='form-row' style={{ width: '100%' }}>
-        <Col xs='9' md='4' className='my-2 my-md-0'>
+    <Navbar color="#FFFFFF" light expand="sm" style={{ marginBottom: 5 }}>
+      <div className="form-row" style={{ width: '100%' }}>
+        <Col xs="9" md="4" className="my-2 my-md-0">
           <FontDropdown fonts={fonts} active={activeFont} onSelect={onChange.bind(null, 'font')} />
         </Col>
-        <Col xs='3' md='2' className='my-2 my-md-0'>
-          <SizeDropdown sizes={sizes} active={activeSize} onSelect={onChange.bind(null, 'size')}/>
+        <Col xs="3" md="2" className="my-2 my-md-0">
+          <SizeDropdown sizes={sizes} active={activeSize} onSelect={onChange.bind(null, 'size')} />
         </Col>
-        <Col xs='9' md='3' className='my-2 my-md-0'>
-          <ThemeDropdown themes={themes} active={activeTheme} onSelect={onChange.bind(null, 'theme')}/>
+        <Col xs="9" md="3" className="my-2 my-md-0">
+          <ThemeDropdown themes={themes} active={activeTheme} onSelect={onChange.bind(null, 'theme')} />
         </Col>
-        <Col xs='3' md='auto' className='my-2 my-md-0'>
-          <Button id='line-numbers' active={activeNumbers} outline color='secondary' style={{ width: '100%' }} onClick={onChange.bind(null, 'numbers', !activeNumbers)}>#</Button>
+        <Col xs="3" md="auto" className="my-2 my-md-0">
+          <Button
+            id="line-numbers"
+            active={activeNumbers}
+            outline
+            color="secondary"
+            style={{ width: '100%' }}
+            onClick={onChange.bind(null, 'numbers', !activeNumbers)}
+          >
+            #
+          </Button>
         </Col>
-        <Col xs='12' md='auto' className='my-2 my-md-0'>
-          <Button id='print' outline color='success' onClick={onPrint} style={{ width: '100%' }}>Print</Button>
+        <Col xs="12" md="auto" className="my-2 my-md-0">
+          <Button id="print" outline color="success" onClick={onPrint} style={{ width: '100%' }}>
+            Print
+          </Button>
         </Col>
       </div>
     </Navbar>

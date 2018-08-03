@@ -4,7 +4,7 @@
   height: 0;
   margin-left: 0.255em;
   vertical-align: 0.255em;
-  content: "";
+  content: '';
   border-top: 0.3em solid;
   border-right: 0.3em solid transparent;
   border-bottom: 0;
@@ -17,9 +17,8 @@
 .btn-outline-dropdown-toggle-select {
   background-color: transparent;
   background-image: none;
-  border-color: #CED4DA;
+  border-color: #ced4da;
 }
 
 .btn-outline-dropdown-toggle-select:hover {
-
 }

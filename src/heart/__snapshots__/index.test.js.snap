@@ -24,29 +24,26 @@ exports[`Heart renders correctly 1`] = `
       </h2>
       <hr />
       <p>
-        That's awesome! Let the developer know on Twitter (
+        That's awesome! Let the developer know on
+         
         <a
           href="https://twitter.com/jaredtpetersen"
           rel="noopener noreferrer"
           target="_blank"
         >
-          @jaredtpetersen
+          Twitter
         </a>
-        ), shoot him an 
+        ,
+         
         <a
-          href="mailto:jaredtoddpetersen@gmail.com"
-        >
-          email
-        </a>
-        , 
-        <a
-          href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=JGJAC7UKRAB9J&lc=US&item_name=CodePrinter%20%2d%20Buy%20me%20a%20Coffee&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"
+          href="https://paypal.me/jaredtpetersen"
           rel="noopener noreferrer"
           target="_blank"
         >
           buy him a cup of coffee
         </a>
-        , or star the repository on 
+        , or star the repository on
+         
         <a
           href="https://github.com/jaredpetersen/codeprinter"
           rel="noopener noreferrer"
@@ -71,7 +68,8 @@ exports[`Heart renders correctly 1`] = `
         This software was developed by Jared Petersen.
       </p>
       <p>
-        You can check out his other repositories on 
+        You can check out his other repositories on
+         
         <a
           href="https://github.com/jaredpetersen"
           rel="noopener noreferrer"
@@ -79,7 +77,9 @@ exports[`Heart renders correctly 1`] = `
         >
           GitHub
         </a>
-         or look at his résumé on 
+         
+        or look at his résumé on
+         
         <a
           href="https://www.linkedin.com/in/petersenjared"
           rel="noopener noreferrer"

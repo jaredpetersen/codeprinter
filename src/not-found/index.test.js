@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
-import NotFound from './index.js';
-import { BrowserRouter as Router } from 'react-router-dom'
+import NotFound from './index';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('NotFound', () => {
   it('renders without crashing', () => {
@@ -11,7 +11,11 @@ describe('NotFound', () => {
 
   it('renders correctly', () => {
     const tree = renderer
-      .create(<Router><NotFound /></Router>)
+      .create(
+        <Router>
+          <NotFound />
+        </Router>
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
