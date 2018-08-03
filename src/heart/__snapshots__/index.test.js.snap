@@ -24,7 +24,8 @@ exports[`Heart renders correctly 1`] = `
       </h2>
       <hr />
       <p>
-        That's awesome! Let the developer know on 
+        That's awesome! Let the developer know on
+         
         <a
           href="https://twitter.com/jaredtpetersen"
           rel="noopener noreferrer"
@@ -32,7 +33,8 @@ exports[`Heart renders correctly 1`] = `
         >
           Twitter
         </a>
-        , 
+        ,
+         
         <a
           href="https://paypal.me/jaredtpetersen"
           rel="noopener noreferrer"
@@ -40,7 +42,8 @@ exports[`Heart renders correctly 1`] = `
         >
           buy him a cup of coffee
         </a>
-        , or star the repository on 
+        , or star the repository on
+         
         <a
           href="https://github.com/jaredpetersen/codeprinter"
           rel="noopener noreferrer"
@@ -65,7 +68,8 @@ exports[`Heart renders correctly 1`] = `
         This software was developed by Jared Petersen.
       </p>
       <p>
-        You can check out his other repositories on 
+        You can check out his other repositories on
+         
         <a
           href="https://github.com/jaredpetersen"
           rel="noopener noreferrer"
@@ -73,7 +77,9 @@ exports[`Heart renders correctly 1`] = `
         >
           GitHub
         </a>
-         or look at his résumé on 
+         
+        or look at his résumé on
+         
         <a
           href="https://www.linkedin.com/in/petersenjared"
           rel="noopener noreferrer"
