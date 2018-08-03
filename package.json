@@ -8,6 +8,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "pretty": "prettier --print-width 120 --single-quote --write \"src/**/*.{js,jsx,json,css}\"",
     "build-storybook": "build-storybook -s public",
     "storybook": "start-storybook -p 9009 -s public",
     "predeploy": "npm run build",
