@@ -1,5 +1,5 @@
 # codeprinter
-[![Build Status](https://travis-ci.org/jaredpetersen/codeprinter.svg?branch=master)](https://travis-ci.org/jaredpetersen/codeprinter)
+[![Build Status](https://travis-ci.org/jaredpetersen/codeprinter.svg?branch=master)](https://travis-ci.org/jaredpetersen/codeprinter) [![Donate](https://img.shields.io/badge/donate-%E2%9D%A4-F33452.svg)](https://paypal.me/jaredtpetersen)
 
 codeprinter's goal is pretty self-explanatory: to make it easier to print out code on paper. Many IDE's either don't allow you to print or have some weird quirks like adding unnecessary headers and footers, not allowing you to change your font size, or not providing syntax highlighting on your printout.
 
