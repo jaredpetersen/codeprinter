@@ -5,6 +5,14 @@ codeprinter's goal is pretty self-explanatory: to make it easier to print out co
 
 codeprinter makes it easy. Simply copy your code into the text box, select your desired font, font size, syntax highlighting theme, and whether or not you would like line numbers and then hit print.
 
+## Using
+
+Requires having [npm installed](https://www.npmjs.com/get-npm). 
+
+You'll also need `react-scripts` installed, which can be done with `npm install react-scripts@latest`. 
+
+Then, run via `npm run start`. 
+
 ## Screenshots
 ![Paste your code](https://i.imgur.com/adhS1Cz.png)
 ![Change your font size](https://i.imgur.com/TlgIxpi.png)
