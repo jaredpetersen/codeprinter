@@ -3,8 +3,8 @@
   "version": "1.0.2",
   "private": true,
   "homepage": "http://jaredpetersen.github.io/codeprinter",
-  "engines" : {
-    "node" : ">=8.6.0"
+  "engines": {
+    "node": ">=8.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -60,13 +60,10 @@
     "@storybook/addon-links": "^4.0.12",
     "@storybook/addons": "^4.0.12",
     "@storybook/react": "^4.0.12",
-    "babel-core": "^6.26.3",
-    "babel-runtime": "^6.26.0",
     "gh-pages": "^2.0.1",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
-    "prettier": "1.15.3",
-    "react-test-renderer": "^16.6.3"
+    "prettier": "1.15.3"
   },
   "browserslist": [
     ">0.2%",
