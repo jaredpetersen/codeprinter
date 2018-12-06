@@ -8,7 +8,7 @@ codeprinter makes it easy. Simply copy your code into the text box, select your 
 ## Usage
 codeprinter is currently hosted by GitHub Pages at http://jaredpetersen.github.io/codeprinter/.
 
-If you're concerned about pasting code into some website, you can use it locally as well. codeprinter is a React project that uses NPM and Node.js, so [you'll need both installed](https://nodejs.org/en/download/) in order to do so. Right now codeprinter supports Node 8.x or higher, but the latest LTS version is always recommended.
+If you're concerned about pasting code into some website, you can use it locally as well. codeprinter is a React project that uses NPM and Node.js, so [you'll need both installed](https://nodejs.org/en/download/) in order to do so. Right now, codeprinter supports Node 8.x or higher, but the latest LTS version is always recommended.
 
 Once that's out of the way, run the following commands to install the dependencies, build the application, and run it:
 ```
