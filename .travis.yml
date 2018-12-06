@@ -7,6 +7,3 @@ node_js:
 script:
   - npm run build
   - npm test -- --coverage
-branches:
-  only:
-    - master
