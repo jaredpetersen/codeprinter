@@ -1,6 +1,15 @@
 {
-  "main.css": "static/css/main.a40972b0.css",
-  "main.css.map": "static/css/main.a40972b0.css.map",
-  "main.js": "static/js/main.9db2ab65.js",
-  "main.js.map": "static/js/main.9db2ab65.js.map"
+  "main.css": "/codeprinter/static/css/main.79520d68.chunk.css",
+  "main.js": "/codeprinter/static/js/main.57043875.chunk.js",
+  "main.js.map": "/codeprinter/static/js/main.57043875.chunk.js.map",
+  "static/css/1.d5eafec8.chunk.css": "/codeprinter/static/css/1.d5eafec8.chunk.css",
+  "static/js/1.66f9eb10.chunk.js": "/codeprinter/static/js/1.66f9eb10.chunk.js",
+  "static/js/1.66f9eb10.chunk.js.map": "/codeprinter/static/js/1.66f9eb10.chunk.js.map",
+  "runtime~main.js": "/codeprinter/static/js/runtime~main.b090461f.js",
+  "runtime~main.js.map": "/codeprinter/static/js/runtime~main.b090461f.js.map",
+  "static/css/1.d5eafec8.chunk.css.map": "/codeprinter/static/css/1.d5eafec8.chunk.css.map",
+  "static/css/main.79520d68.chunk.css.map": "/codeprinter/static/css/main.79520d68.chunk.css.map",
+  "index.html": "/codeprinter/index.html",
+  "precache-manifest.3845e8ad581206d4c123e1f56414f7bd.js": "/codeprinter/precache-manifest.3845e8ad581206d4c123e1f56414f7bd.js",
+  "service-worker.js": "/codeprinter/service-worker.js"
 }
