@@ -20,7 +20,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!<rootDir>/node_modules/",
-      "!src/index.js",
+      "!src/index.jsx",
       "!src/registerServiceWorker.js",
       "!setupTests.js",
       "!src/**/*.story.{js,jsx}"
