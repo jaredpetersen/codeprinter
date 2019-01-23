@@ -17,7 +17,7 @@ const Heart = () => {
             </a>
             ,{' '}
             <a href="https://paypal.me/jaredtpetersen" target="_blank" rel="noopener noreferrer">
-              buy him a cup of coffee
+              donate
             </a>
             , or star the repository on{' '}
             <a href="https://github.com/jaredpetersen/codeprinter" target="_blank" rel="noopener noreferrer">
@@ -26,8 +26,8 @@ const Heart = () => {
             .
           </p>
           <p>
-            Found a bug? Want to request a new feature? Great! Just create an issue and/or check out the repository on
-            GitHub. We're welcome to accept pull requests.
+            Found a bug? Want to request a new feature? Great! Just create an issue on GitHub. We're welcome to pull
+            requests.
           </p>
 
           <h2>

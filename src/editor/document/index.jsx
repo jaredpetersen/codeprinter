@@ -13,7 +13,7 @@ import {
   tomorrow,
   vs,
   xcode
-} from 'react-syntax-highlighter/styles/hljs';
+} from 'react-syntax-highlighter/dist/styles/hljs';
 import './index.css';
 
 const themeMap = {

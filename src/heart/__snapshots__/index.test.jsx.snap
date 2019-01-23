@@ -40,7 +40,7 @@ exports[`Heart renders correctly 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          buy him a cup of coffee
+          donate
         </a>
         , or star the repository on
          
@@ -54,7 +54,7 @@ exports[`Heart renders correctly 1`] = `
         .
       </p>
       <p>
-        Found a bug? Want to request a new feature? Great! Just create an issue and/or check out the repository on GitHub. We're welcome to accept pull requests.
+        Found a bug? Want to request a new feature? Great! Just create an issue on GitHub. We're welcome to pull requests.
       </p>
       <h2>
         <i

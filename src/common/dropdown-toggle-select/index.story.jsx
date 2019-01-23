@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import 'bootstrap/dist/css/bootstrap.css';
 import { UncontrolledDropdown, DropdownMenu, DropdownItem } from 'reactstrap';
-import DropdownToggleSelect from './index.js';
+import DropdownToggleSelect from './index.jsx';
 
 storiesOf('Common/DropdownToggleSelect', module).add('default', () => (
   <UncontrolledDropdown inNavbar>
