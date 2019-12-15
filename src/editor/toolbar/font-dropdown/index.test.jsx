@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import FontDropdown from './index';
 import { DropdownItem } from 'reactstrap';
 
@@ -11,26 +12,9 @@ describe('Editor Toolbar FontDropdown', () => {
 
   it('renders all of the fonts as dropdown options', () => {
     const fonts = ['serif', 'sans-serif'];
-    const fontDropdown = shallow(<FontDropdown fonts={fonts} active={fonts[1]} onSelect={() => {}} />);
-    const dropdownItems = fontDropdown.find(DropdownItem);
+    const tree = renderer.create(<FontDropdown fonts={fonts} active={fonts[1]} onSelect={() => {}} />).toJSON();
 
-    expect(dropdownItems).toHaveLength(fonts.length);
-
-    expect(
-      dropdownItems
-        .at(0)
-        .childAt(0)
-        .text()
-    ).toEqual(fonts[0]);
-    expect(dropdownItems.at(0).prop('active')).toEqual(false);
-
-    expect(
-      dropdownItems
-        .at(1)
-        .childAt(0)
-        .text()
-    ).toEqual(fonts[1]);
-    expect(dropdownItems.at(1).prop('active')).toEqual(true);
+    expect(tree).toMatchSnapshot();
   });
 
   it('calls the onSelect function on selecting a dropdown option', () => {

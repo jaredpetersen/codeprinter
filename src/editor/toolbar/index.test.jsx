@@ -108,4 +108,94 @@ describe('Editor Toolbar', () => {
     expect(themeDropdown.prop('themes')).toEqual(themes);
     expect(themeDropdown.prop('active')).toEqual(themes[0]);
   });
+
+  it('renders none line numbers (none)', () => {
+    const fonts = ['Anonymous Pro', 'Cousine', 'Cutive Mono'];
+
+    const sizes = [8, 9, 10, 11, 12];
+
+    const themes = ['GitHub', 'VS', 'Xcode'];
+
+    const toolbar = shallow(
+      <Toolbar
+        fonts={fonts}
+        activeFont={fonts[0]}
+        sizes={sizes}
+        activeSize={sizes[0]}
+        themes={themes}
+        activeTheme={themes[0]}
+        lineNumbers={'none'}
+        onChange={() => {}}
+        onPrint={() => {}}
+      />
+    );
+
+    const lineNumbersNoneButton = toolbar.find('#line-numbers-none');
+    const lineNumbersStandardButton = toolbar.find('#line-numbers-standard');
+    const lineNumbersVerticalButton = toolbar.find('#line-numbers-vertical');
+
+    expect(lineNumbersNoneButton.prop('active')).toEqual(true);
+    expect(lineNumbersStandardButton.prop('active')).toEqual(false);
+    expect(lineNumbersVerticalButton.prop('active')).toEqual(false);
+  });
+
+  it('renders none line numbers (standard)', () => {
+    const fonts = ['Anonymous Pro', 'Cousine', 'Cutive Mono'];
+
+    const sizes = [8, 9, 10, 11, 12];
+
+    const themes = ['GitHub', 'VS', 'Xcode'];
+
+    const toolbar = shallow(
+      <Toolbar
+        fonts={fonts}
+        activeFont={fonts[0]}
+        sizes={sizes}
+        activeSize={sizes[0]}
+        themes={themes}
+        activeTheme={themes[0]}
+        lineNumbers={'standard'}
+        onChange={() => {}}
+        onPrint={() => {}}
+      />
+    );
+
+    const lineNumbersNoneButton = toolbar.find('#line-numbers-none');
+    const lineNumbersStandardButton = toolbar.find('#line-numbers-standard');
+    const lineNumbersVerticalButton = toolbar.find('#line-numbers-vertical');
+
+    expect(lineNumbersNoneButton.prop('active')).toEqual(false);
+    expect(lineNumbersStandardButton.prop('active')).toEqual(true);
+    expect(lineNumbersVerticalButton.prop('active')).toEqual(false);
+  });
+
+  it('renders none line numbers (none)', () => {
+    const fonts = ['Anonymous Pro', 'Cousine', 'Cutive Mono'];
+
+    const sizes = [8, 9, 10, 11, 12];
+
+    const themes = ['GitHub', 'VS', 'Xcode'];
+
+    const toolbar = shallow(
+      <Toolbar
+        fonts={fonts}
+        activeFont={fonts[0]}
+        sizes={sizes}
+        activeSize={sizes[0]}
+        themes={themes}
+        activeTheme={themes[0]}
+        lineNumbers={'vertical'}
+        onChange={() => {}}
+        onPrint={() => {}}
+      />
+    );
+
+    const lineNumbersNoneButton = toolbar.find('#line-numbers-none');
+    const lineNumbersStandardButton = toolbar.find('#line-numbers-standard');
+    const lineNumbersVerticalButton = toolbar.find('#line-numbers-vertical');
+
+    expect(lineNumbersNoneButton.prop('active')).toEqual(false);
+    expect(lineNumbersStandardButton.prop('active')).toEqual(false);
+    expect(lineNumbersVerticalButton.prop('active')).toEqual(true);
+  });
 });

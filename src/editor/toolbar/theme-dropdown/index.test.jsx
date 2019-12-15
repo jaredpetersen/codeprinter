@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import ThemeDropdown from './index';
 import { DropdownItem } from 'reactstrap';
 
@@ -11,26 +12,9 @@ describe('Editor Toolbar ThemeDropdown', () => {
 
   it('renders all of the themes as dropdown options', () => {
     const themes = ['GitHub', 'VS', 'Xcode'];
-    const themeDropdown = shallow(<ThemeDropdown themes={themes} active={themes[1]} onSelect={() => {}} />);
-    const dropdownItems = themeDropdown.find(DropdownItem);
+    const tree = renderer.create(<ThemeDropdown themes={themes} active={themes[1]} onSelect={() => {}} />).toJSON();
 
-    expect(dropdownItems).toHaveLength(themes.length);
-
-    expect(
-      dropdownItems
-        .at(0)
-        .childAt(0)
-        .text()
-    ).toEqual(themes[0]);
-    expect(dropdownItems.at(0).prop('active')).toEqual(false);
-
-    expect(
-      dropdownItems
-        .at(1)
-        .childAt(0)
-        .text()
-    ).toEqual(themes[1]);
-    expect(dropdownItems.at(1).prop('active')).toEqual(true);
+    expect(tree).toMatchSnapshot();
   });
 
   it('calls the onSelect function on selecting a dropdown option ', () => {

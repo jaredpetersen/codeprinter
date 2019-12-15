@@ -19,7 +19,7 @@ storiesOf('Editor/Toolbar', module).add('default', () => {
       activeSize={sizes[0]}
       themes={themes}
       activeTheme={themes[0]}
-      activeNumbers={false}
+      linNumbers={'none'}
       onChange={action('changed')}
       onPrint={action('print')}
     />
