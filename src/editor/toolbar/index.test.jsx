@@ -21,7 +21,7 @@ describe('Editor Toolbar', () => {
         activeSize={sizes[0]}
         themes={themes}
         activeTheme={themes[0]}
-        activeNumbers={false}
+        lineNumbers={'none'}
         onChange={() => {}}
         onPrint={() => {}}
       />
@@ -43,7 +43,7 @@ describe('Editor Toolbar', () => {
         activeSize={sizes[0]}
         themes={themes}
         activeTheme={themes[0]}
-        activeNumbers={false}
+        lineNumbers={'none'}
         onChange={() => {}}
         onPrint={() => {}}
       />
@@ -70,7 +70,7 @@ describe('Editor Toolbar', () => {
         activeSize={sizes[0]}
         themes={themes}
         activeTheme={themes[0]}
-        activeNumbers={false}
+        lineNumbers={'none'}
         onChange={() => {}}
         onPrint={() => {}}
       />
@@ -97,7 +97,7 @@ describe('Editor Toolbar', () => {
         activeSize={sizes[0]}
         themes={themes}
         activeTheme={themes[0]}
-        activeNumbers={false}
+        lineNumbers={'none'}
         onChange={() => {}}
         onPrint={() => {}}
       />

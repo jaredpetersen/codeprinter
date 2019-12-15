@@ -5,7 +5,7 @@ import DropdownToggleSelect from '../../../common/dropdown-toggle-select';
 
 const ThemeDropdown = ({ themes, active, onSelect }) => {
   const dropdownItems = themes.map(theme => (
-    <DropdownItem key={theme} active={theme === active} onClick={onSelect.bind(null, theme)}>
+    <DropdownItem key={theme} active={theme === active} onClick={() => onSelect(theme)}>
       {theme}
     </DropdownItem>
   ));

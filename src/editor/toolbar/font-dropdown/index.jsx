@@ -9,7 +9,7 @@ const FontDropdown = ({ fonts, active, onSelect }) => {
       <DropdownItem
         key={font}
         active={font === active}
-        onClick={onSelect.bind(null, font)}
+        onClick={() => onSelect(font)}
         style={{ fontFamily: `"${font}", monospace` }}
       >
         {font}

@@ -13,7 +13,7 @@ import {
   tomorrow,
   vs,
   xcode
-} from 'react-syntax-highlighter/dist/styles/hljs';
+} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import './index.css';
 
 const themeMap = {
@@ -56,10 +56,16 @@ class Document extends Component {
   render() {
     let placeholder = 'Paste your code in here!';
 
-    if (this.props.numbers) {
-      placeholder +=
-        " \nIf you have some lines that are longer than the page width, the line numbers won't be fully accurate. To correct for this, add a few extra new lines to the bottom of your code.";
-    }
+    const lineNumberStyle = lineNumbers => {
+      switch (lineNumbers) {
+        case 'standard':
+          return { className: 'code-line' };
+        case 'vertical':
+          return { className: 'code-line-vertical' };
+        default:
+          return null;
+      }
+    };
 
     return (
       <div className="h-100 d-flex flex-column">
@@ -77,7 +83,8 @@ class Document extends Component {
 
         <div id="printSpace" className="only-print" style={{ fontSize: '62.5%' }}>
           <SyntaxHighlighter
-            showLineNumbers={this.props.numbers}
+            lineProps={lineNumberStyle(this.props.lineNumbers)}
+            wrapLines={true}
             style={themeMap[this.props.theme] || ''}
             codeTagProps={{
               style: { fontFamily: `"${this.props.font}", monospace`, fontSize: `${this.props.size}pt` }
@@ -97,7 +104,7 @@ Document.propTypes = {
   font: PropTypes.string.isRequired,
   size: PropTypes.number.isRequired,
   theme: PropTypes.oneOf(['None', ...Object.keys(themeMap)]).isRequired,
-  numbers: PropTypes.bool.isRequired
+  lineNumbers: PropTypes.oneOf(['none', 'standard', 'vertical']).isRequired
 };
 
 export default Document;

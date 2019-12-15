@@ -5,7 +5,7 @@ import DropdownToggleSelect from '../../../common/dropdown-toggle-select';
 
 const SizeDropdown = ({ sizes, active, onSelect }) => {
   const dropdownItems = sizes.map(size => (
-    <DropdownItem key={size} active={size === active} onClick={onSelect.bind(null, size)}>
+    <DropdownItem key={size} active={size === active} onClick={() => onSelect(size)}>
       {size}
     </DropdownItem>
   ));

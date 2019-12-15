@@ -9,3 +9,53 @@
     display: none !important;
   }
 }
+
+code {
+  counter-reset: line;
+}
+
+.code-line {
+  counter-increment: line;
+  position: relative;
+  display: block;
+  margin-left: 2rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid transparent;
+}
+
+.code-line:before {
+  content: '  ' counter(line);
+  position: absolute;
+  margin-left: -2.5rem;
+}
+
+.code-line:nth-child(n + 10):before {
+  content: ' ' counter(line);
+}
+
+.code-line:nth-child(n + 100):before {
+  content: counter(line);
+}
+
+.code-line-vertical {
+  counter-increment: line;
+  position: relative;
+  display: block;
+  margin-left: 2rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid;
+}
+
+.code-line-vertical:before {
+  content: '  ' counter(line);
+  position: absolute;
+  margin-left: -2.5rem;
+}
+
+.code-line-vertical:nth-child(n + 10):before {
+  content: ' ' counter(line);
+}
+
+.code-line-vertical:nth-child(n + 100):before {
+  content: counter(line);
+}

@@ -61,7 +61,7 @@ describe('Editor', () => {
     expect(toolbar.prop('themes')).toEqual(expectedThemes);
     expect(toolbar.prop('activeTheme')).toEqual(expectedThemes[0]);
 
-    expect(toolbar.prop('activeNumbers')).toEqual(false);
+    expect(toolbar.prop('lineNumbers')).toEqual('none');
   });
 
   it('renders a document', () => {
@@ -71,7 +71,7 @@ describe('Editor', () => {
     expect(document.prop('font')).toEqual('Roboto Mono');
     expect(document.prop('size')).toEqual(10);
     expect(document.prop('theme')).toEqual('None');
-    expect(document.prop('numbers')).toEqual(false);
+    expect(document.prop('lineNumbers')).toEqual('none');
   });
 
   it('prints the page when the print button is pressed', () => {
