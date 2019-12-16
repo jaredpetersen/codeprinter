@@ -10,7 +10,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
-    "pretty": "prettier --print-width 120 --single-quote --write \"*.{js,jsx,css,json,md}\"",
+    "pretty": "prettier --print-width 120 --single-quote --write \"**/*.{js,jsx,css,json,md}\"",
     "build-storybook": "build-storybook -s public",
     "storybook": "start-storybook -p 9009 -s public",
     "predeploy": "npm run build",
@@ -41,7 +41,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,css,json,md}": [
+    "**/*.{js,jsx,css,json,md}": [
       "prettier --print-width 120 --single-quote --write",
       "git add"
     ]
