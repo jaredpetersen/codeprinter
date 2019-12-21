@@ -35,7 +35,7 @@ class Editor extends Component {
         font: this.fonts[11],
         size: this.sizes[2],
         theme: this.themes[0],
-        numbers: false
+        lineNumbers: 'none'
       }
     };
 
@@ -46,8 +46,14 @@ class Editor extends Component {
     window.print();
   }
 
-  onChange(type, value) {
-    this.setState({ style: { ...this.state.style, [type]: value } });
+  onChange(toolbar) {
+    const style = {
+      font: toolbar.activeFont,
+      size: toolbar.activeSize,
+      theme: toolbar.activeTheme,
+      lineNumbers: toolbar.lineNumbers
+    };
+    this.setState({ style });
   }
 
   render() {
@@ -60,7 +66,7 @@ class Editor extends Component {
           activeSize={this.state.style.size}
           themes={this.themes}
           activeTheme={this.state.style.theme}
-          activeNumbers={this.state.style.numbers}
+          lineNumbers={this.state.style.lineNumbers}
           onChange={this.onChange}
           onPrint={this.onPrint}
         />
@@ -69,7 +75,7 @@ class Editor extends Component {
             font={this.state.style.font}
             size={this.state.style.size}
             theme={this.state.style.theme}
-            numbers={this.state.style.numbers}
+            lineNumbers={this.state.style.lineNumbers}
           />
         </Container>
       </div>

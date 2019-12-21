@@ -9,3 +9,55 @@
     display: none !important;
   }
 }
+
+code {
+  counter-reset: line;
+}
+
+.code-line {
+  counter-increment: line;
+  position: relative;
+  display: block;
+  margin-left: 2.5em;
+  padding-left: 1em;
+  border-left: 1px solid transparent;
+}
+
+.code-line:before {
+  content: '  ' counter(line);
+  position: absolute;
+  margin-left: -3.5em;
+  color: #212529;
+}
+
+.code-line:nth-child(n + 10):before {
+  content: ' ' counter(line);
+}
+
+.code-line:nth-child(n + 100):before {
+  content: counter(line);
+}
+
+.code-line-vertical {
+  counter-increment: line;
+  position: relative;
+  display: block;
+  margin-left: 2.5em;
+  padding-left: 1em;
+  border-left: 1px solid #212529;
+}
+
+.code-line-vertical:before {
+  content: '  ' counter(line);
+  position: absolute;
+  margin-left: -3.5em;
+  color: #212529;
+}
+
+.code-line-vertical:nth-child(n + 10):before {
+  content: ' ' counter(line);
+}
+
+.code-line-vertical:nth-child(n + 100):before {
+  content: counter(line);
+}

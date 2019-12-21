@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Editor Toolbar FontDropdown renders all of the fonts as dropdown options 1`] = `
+<div
+  className="dropdown"
+  onKeyDown={[Function]}
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    aria-label={null}
+    className="dropdown-toggle-select btn btn-outline-dropdown-toggle-select btn-block"
+    onClick={[Function]}
+    style={
+      Object {
+        "fontFamily": "\\"sans-serif\\", monospace",
+        "textAlign": "left",
+      }
+    }
+    type="button"
+  >
+    sans-serif
+  </button>
+  <div
+    aria-hidden={true}
+    className="dropdown-menu"
+    role="menu"
+    tabIndex="-1"
+  >
+    <button
+      className="dropdown-item"
+      onClick={[Function]}
+      role="menuitem"
+      style={
+        Object {
+          "fontFamily": "\\"serif\\", monospace",
+        }
+      }
+      tabIndex="0"
+      type="button"
+    >
+      serif
+    </button>
+    <button
+      className="dropdown-item active"
+      onClick={[Function]}
+      role="menuitem"
+      style={
+        Object {
+          "fontFamily": "\\"sans-serif\\", monospace",
+        }
+      }
+      tabIndex="0"
+      type="button"
+    >
+      sans-serif
+    </button>
+  </div>
+</div>
+`;
