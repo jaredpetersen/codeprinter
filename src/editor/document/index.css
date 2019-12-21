@@ -27,6 +27,7 @@ code {
   content: '  ' counter(line);
   position: absolute;
   margin-left: -3.5em;
+  color: #212529;
 }
 
 .code-line:nth-child(n + 10):before {
@@ -43,13 +44,14 @@ code {
   display: block;
   margin-left: 2.5em;
   padding-left: 1em;
-  border-left: 1px solid;
+  border-left: 1px solid #212529;
 }
 
 .code-line-vertical:before {
   content: '  ' counter(line);
   position: absolute;
   margin-left: -3.5em;
+  color: #212529;
 }
 
 .code-line-vertical:nth-child(n + 10):before {
