@@ -18,15 +18,15 @@ code {
   counter-increment: line;
   position: relative;
   display: block;
-  margin-left: 2rem;
-  padding-left: 0.5rem;
+  margin-left: 2.5em;
+  padding-left: 1em;
   border-left: 1px solid transparent;
 }
 
 .code-line:before {
   content: '  ' counter(line);
   position: absolute;
-  margin-left: -2.5rem;
+  margin-left: -3.5em;
 }
 
 .code-line:nth-child(n + 10):before {
@@ -41,15 +41,15 @@ code {
   counter-increment: line;
   position: relative;
   display: block;
-  margin-left: 2rem;
-  padding-left: 0.5rem;
+  margin-left: 2.5em;
+  padding-left: 1em;
   border-left: 1px solid;
 }
 
 .code-line-vertical:before {
   content: '  ' counter(line);
   position: absolute;
-  margin-left: -2.5rem;
+  margin-left: -3.5em;
 }
 
 .code-line-vertical:nth-child(n + 10):before {
