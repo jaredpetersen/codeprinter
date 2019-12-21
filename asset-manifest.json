@@ -1,15 +1,25 @@
 {
-  "main.css": "/codeprinter/static/css/main.723bebf8.chunk.css",
-  "main.js": "/codeprinter/static/js/main.5f4191d6.chunk.js",
-  "main.js.map": "/codeprinter/static/js/main.5f4191d6.chunk.js.map",
-  "static/css/1.4241ff66.chunk.css": "/codeprinter/static/css/1.4241ff66.chunk.css",
-  "static/js/1.b3b5f8b4.chunk.js": "/codeprinter/static/js/1.b3b5f8b4.chunk.js",
-  "static/js/1.b3b5f8b4.chunk.js.map": "/codeprinter/static/js/1.b3b5f8b4.chunk.js.map",
-  "runtime~main.js": "/codeprinter/static/js/runtime~main.b090461f.js",
-  "runtime~main.js.map": "/codeprinter/static/js/runtime~main.b090461f.js.map",
-  "static/css/1.4241ff66.chunk.css.map": "/codeprinter/static/css/1.4241ff66.chunk.css.map",
-  "static/css/main.723bebf8.chunk.css.map": "/codeprinter/static/css/main.723bebf8.chunk.css.map",
-  "index.html": "/codeprinter/index.html",
-  "precache-manifest.8535a9cb9590836257d36cab1128de28.js": "/codeprinter/precache-manifest.8535a9cb9590836257d36cab1128de28.js",
-  "service-worker.js": "/codeprinter/service-worker.js"
+  "files": {
+    "main.css": "/codeprinter/static/css/main.fe8efe25.chunk.css",
+    "main.js": "/codeprinter/static/js/main.a72ad738.chunk.js",
+    "main.js.map": "/codeprinter/static/js/main.a72ad738.chunk.js.map",
+    "runtime-main.js": "/codeprinter/static/js/runtime-main.1a5fcc0c.js",
+    "runtime-main.js.map": "/codeprinter/static/js/runtime-main.1a5fcc0c.js.map",
+    "static/css/2.d5831cfa.chunk.css": "/codeprinter/static/css/2.d5831cfa.chunk.css",
+    "static/js/2.309ac029.chunk.js": "/codeprinter/static/js/2.309ac029.chunk.js",
+    "static/js/2.309ac029.chunk.js.map": "/codeprinter/static/js/2.309ac029.chunk.js.map",
+    "index.html": "/codeprinter/index.html",
+    "precache-manifest.ea515e103bf04946fb64e1fc3199998c.js": "/codeprinter/precache-manifest.ea515e103bf04946fb64e1fc3199998c.js",
+    "service-worker.js": "/codeprinter/service-worker.js",
+    "static/css/2.d5831cfa.chunk.css.map": "/codeprinter/static/css/2.d5831cfa.chunk.css.map",
+    "static/css/main.fe8efe25.chunk.css.map": "/codeprinter/static/css/main.fe8efe25.chunk.css.map",
+    "static/js/2.309ac029.chunk.js.LICENSE": "/codeprinter/static/js/2.309ac029.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a5fcc0c.js",
+    "static/css/2.d5831cfa.chunk.css",
+    "static/js/2.309ac029.chunk.js",
+    "static/css/main.fe8efe25.chunk.css",
+    "static/js/main.a72ad738.chunk.js"
+  ]
 }

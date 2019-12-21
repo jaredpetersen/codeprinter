@@ -1,6 +1,7 @@
 {
   "short_name": "codeprinter",
   "name": "codeprinter",
+  "description": "Print out code easily",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +11,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#343a40",
   "background_color": "#ffffff"
 }
